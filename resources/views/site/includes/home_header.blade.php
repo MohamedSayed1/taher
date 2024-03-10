@@ -594,6 +594,22 @@
         cursor: pointer;
         border: 1px solid transparent !important;
     }
+
+    .form-check-input, .form-check-input + label {
+        cursor: pointer;
+    }
+    
+    .btn, .lang-btn{
+        transition:0.4s all ease;
+    }
+
+    .btn:hover{
+        transform: scale(1.1)
+    }
+
+    .lang-btn:hover {
+        letter-spacing: 1.5px;
+    }
 </style>
 <div class="container-fluid header-section desktop">
     <div class="row justify-content-center p-4 mx-5" style="border:3px solid #c9c9c9; border-radius:20px">
@@ -627,7 +643,7 @@
         <div class="col-12 text-center mb-5">
             <a href="{{route('start_package')}}"
                class="btn"
-               style="background:#01b701; border-radius:20px; padding:0.5rem 7rem; color:white">{{ trans('messages.Start Exam') }}
+               style="background:#01b701; border-radius:20px; padding:0.5rem 7rem; color:white; font-size:20px">{{ trans('messages.Start Exam') }}
             </a>
         </div>
         <div class="col-12 mb-5">
@@ -655,11 +671,11 @@
                                     </span>
                                 @endif
                                 <div class="package-wrapper">
-                                    <div class="package-header d-flex align-items-center justify-content-between">
+                                    <div class="package-header d-flex align-items-center justify-content-between flex-wrap">
                                         @if(!empty($package->photo_desktop) && file_exists(public_path().'/'.$package->photo_desktop) )
-                                            <img style="height:100px; width:200px;" src="{{ url($package->photo_desktop) }}" alt="">
+                                            <img style="height:100px; width:200px;aspect-ratio:2/1;" src="{{ url($package->photo_desktop) }}" alt="">
                                         @else
-                                            <img style="height:100px; width:200px;"
+                                            <img style="height:100px; width:200px;aspect-ratio:2/1;"
                                                  src="{{ url('front_them/assets/imgs/02.png') }}"
                                                  alt="">
                                         @endif
@@ -792,12 +808,12 @@
                                                 <div  class="package-header d-flex align-items-center justify-content-between">
                                                     @if(!empty($package->photo_phone) && file_exists(public_path().'/'.$package->photo_phone) )
                                                         <img
-                                                            style="height:100px; width:120px; margin-inline-start:1rem"
+                                                            style="height:100px;width:120px;aspect-ratio:1/1; margin-inline-start:1rem"
                                                             src="{{ url($package->photo_phone) }}"
                                                             alt="">
                                                     @else
                                                         <img
-                                                            style="height:100px; width:120px; margin-inline-start:1rem"
+                                                            style="height:100px; width:120px;aspect-ratio:1/1; margin-inline-start:1rem"
                                                             src="{{ url('front_them/assets/imgs/02.png') }}"
                                                             alt="">
                                                     @endif

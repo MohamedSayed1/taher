@@ -32,6 +32,34 @@
         .lock_exam .actions .btn {
             display: none;
         }
+
+        .form-check-input, .form-check-input + label {
+            cursor: pointer;
+        }
+        
+        .btn, .lang-btn, .test-long-wrapper{
+            transition:0.4s all ease;
+        }
+
+        .btn:hover{
+            transform: scale(1.1)
+        }
+
+        .lang-btn:hover {
+            letter-spacing: 1.5px;
+        }
+
+        .test-long-wrapper:hover {
+             border:1px solid transparent!important;
+             background:#1ba9ff !important;
+             color:white !important;
+             cursor: pointer;
+        }
+
+        .test-long-wrapper:hover p, .test-long-wrapper:hover span{
+             color:white !important;
+        }
+
     </style>
     <section class="container-fluid tests-page-wrapper">
         <div class="container">
@@ -45,19 +73,19 @@
                         <div class="row lang-container mx-5 home-header-chang-lang">
                             @if ($langAndDefaultLang->lang_ar == true)
                                 <a  href="javascript:void(0)" data-code="ar" class="lang-change lang-btn" style="color:black; border:2px solid grey; border-radius:10px; margin-inline-end:5px">
-                                    <input type="radio" name="lang" id="arabicLang" {{App::getLocale() == 'ar'?"checked":""}}>
+                                    <input class="form-check-input" type="radio" name="lang" id="arabicLang" {{App::getLocale() == 'ar'?"checked":""}}>
                                     <label for="arabicLang">العربية</label>
                                 </a>
                             @endif
                             @if ($langAndDefaultLang->lang_en == true)
                                 <a href="javascript:void(0)" data-code="en" class="lang-change lang-btn" style="color:black; border:2px solid grey; border-radius:10px;; margin-inline-end:5px">
-                                    <input type="radio" name="lang" id="englishLang" {{App::getLocale() == 'en'?"checked":""}}>
+                                    <input class="form-check-input" type="radio" name="lang" id="englishLang" {{App::getLocale() == 'en'?"checked":""}}>
                                     <label for="englishLang">English</label>
                                 </a>
                             @endif
                             @if ($langAndDefaultLang->lang_nl == true)
                                 <a href="javascript:void(0)" data-code="nl" class="lang-change lang-btn" style="color:black; border:2px solid grey; border-radius:10px; margin-inline-end:5px">
-                                    <input type="radio" name="lang" id="netherLang" {{App::getLocale() == 'nl'?"checked":""}}>
+                                    <input class="form-check-input" type="radio" name="lang" id="netherLang" {{App::getLocale() == 'nl'?"checked":""}}>
                                     <label for="netherLang">Netherland</label>
                                 </a>
                             @endif

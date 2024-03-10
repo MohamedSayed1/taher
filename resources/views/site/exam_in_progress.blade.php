@@ -176,7 +176,7 @@
 {{--                    {{ Session::get('exam_object')['name_' . App::getLocale()] }}--}}
 {{--                </a>--}}
 {{--            </div>--}}
-            <div class="row test-card-wrapper mt-5 mb-5">
+            <div class="row test-card-wrapper mt-2 mb-5">
                 <div class="row progress_bar" id="time_progress_bar">
                     <div></div>
                 </div>

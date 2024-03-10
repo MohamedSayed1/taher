@@ -50,7 +50,7 @@
                             type="submit">{{ trans('messages.Send Password Reset Link') }}</button>
                     </form>
                 </div>
-                <div class="row redirection-row mt-3">
+                <div class="row redirection-row mt-3" style="font-weight:900;">
                     <a href="{{ route('login') }}">{{ trans('messages.Back to login') }}</a>
                 </div>
             </div>

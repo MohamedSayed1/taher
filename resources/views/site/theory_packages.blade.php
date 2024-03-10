@@ -30,7 +30,7 @@
                                     </div>
                                 </div>
                                 <div class="content-wrapper">
-                                    <p class="desc">
+                                                                        <p class="desc">
                                         {!! nl2br($thpackage->{'short_desc_' . App::getLocale()}) !!}
                                     </p>
                                 </div>

@@ -2843,13 +2843,13 @@
 }
 
 .test-page-wrapper {
-    padding-top: 5%;
+    /* padding-top: 5%; */
     padding-bottom: 5%;
 }
 
 @media (max-width: 576px) {
     .test-page-wrapper {
-        padding-top: 10%;
+        /* padding-top: 10%; */
         padding-bottom: 10%;
     }
 }
@@ -5452,7 +5452,7 @@ html * {
 }
 
 body {
-    font-family: "Tajawal", sans-serif;
+    font-family: sans-serif, Arial;
     direction: rtl;
     font-size: 18px;
     overflow-x: hidden;
@@ -5526,7 +5526,11 @@ body {
     transition:0.4s all ease;
 }
 
-.theory-package-section .theory-package-cards .wrapper .card:hover {
+.theory-package-cards .wrapper .card {
+    transition:0.4s all ease;
+}
+
+.theory-package-cards .wrapper .card:hover {
     transform:scale(1.1);
 }
 

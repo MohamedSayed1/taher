@@ -25,6 +25,14 @@
     .singup-container .package-card:hover {
         transform:scale(1.05)
     }
+
+    .btn{
+            transition:0.4s all ease;
+    }
+
+    .btn:hover{
+        transform: scale(1.05)
+    }
 </style>
 <body>
 <nav>
@@ -213,8 +221,8 @@
 
                 @endif -->
             </div>
-            <div class="row redirection-row mt-2">
-                <span>{{ trans('messages.You have an account ?') }}</span>
+            <div class="row redirection-row mt-2" style="font-weight:900;">
+                <span style="font-size:1.2rem">{{ trans('messages.You have an account ?') }}</span>
                 <a href="{{ route('login') }}">{{ trans('messages.Login') }}</a>
             </div>
 

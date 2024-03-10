@@ -5480,7 +5480,11 @@ body {
     transition:0.4s all ease;
 }
 
-.theory-package-section .theory-package-cards .wrapper .card:hover {
+.theory-package-cards .wrapper .card {
+    transition:0.4s all ease;
+}
+
+.theory-package-cards .wrapper .card:hover {
     transform:scale(1.1);
 }
 

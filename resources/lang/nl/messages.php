@@ -173,7 +173,7 @@ return [
     'My account' => 'Mijn account',
     'Home' => 'Home',
     'Packages and offers' => 'Paketten en aanbiedingen',
-    'Contact us' => 'Contacteer ons',
+    'Contact us' => 'Contact',
     'Answer' => 'Antwoord',
     'Right answer' => 'Juist antwoord',
     'Answers' => 'Antwoorden',

@@ -13,6 +13,15 @@
     <link rel="stylesheet" href="{{ url('front_them/assets/css/style_' . App::getLocale() . '.css') }}">
 </head>
 
+<style>
+        .btn{
+            transition:0.4s all ease;
+        }
+
+        .btn:hover{
+            transform: scale(1.05)
+        }
+</style>
 <body>
     <section class="container-fluid login-container">
         <div class="row justify-content-center">
@@ -72,8 +81,8 @@
                         <button class="btn btn-block mt-4" type="submit">{{ trans('messages.Login') }}</button>
                     </form>
                 </div>
-                <div class="row redirection-row mt-3">
-                    <span>{{ trans('messages.Dont have an account?') }}</span>
+                <div class="row redirection-row mt-3" style="font-weight:900;">
+                    <span style="font-size:1.2rem">{{ trans('messages.Dont have an account?') }}</span>
                     <a href="{{ route('register') }}">{{ trans('messages.Create new account') }}</a>
                 </div>
             </div>

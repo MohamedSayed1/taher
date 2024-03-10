@@ -89,8 +89,7 @@
             <img src="{{ url('front_them/assets/imgs/small-logo.png') }}" alt="">
         </a>
         <div class="adnan-txt text-center" style="color:#1ba9ff; font-size:30px; font-weight:700;">
-            <span class="d-block">Adnan Eltaher</span>
-            <span class="d-block">عدنان الطاهر</span>
+            <span class="d-block">عدنان الطاهر - Adnaan Altaher</span>
         </div>
         <a href="{{ url()->previous() }}" class="back text-center d-block" style="cursor:pointer;text-decoration:none">
             <img src="{{ url('front_them/assets/imgs/back-arrow.png') }}" alt="" style="width:70px; height:70px">
