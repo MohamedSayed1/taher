@@ -1,0 +1,134 @@
+.blog-page-wrapper {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    @media(max-width: 576px) {
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+    .top-row {
+        .title {
+            font-weight: bold;
+            color: $blue;
+        }
+    }
+    .side-menu {
+        margin-top: 3em;
+        @media(max-width: 576px) {}
+        nav {
+            @media(max-width: 576px) {
+                // display: flex;
+                flex-direction: row !important;
+                width: 100%;
+                overflow-x: scroll;
+                flex-wrap: nowrap;
+            }
+            a {
+                background-color: $white;
+                border: 1px solid #ddd;
+                margin-bottom: 0.5em;
+                border-radius: 5px;
+                text-decoration: none;
+                color: $black;
+                @media(max-width: 576px) {
+                    flex-shrink: 0;
+                }
+                &:hover {
+                    background-color: $blue;
+                    border-color: $blue;
+                    color: $white;
+                    transition: all .4s ease-in-out;
+                }
+            }
+            .active {
+                background-color: $blue;
+                border-color: $blue;
+                color: $white;
+                transition: all .4s ease-in-out;
+            }
+        }
+    }
+    .blog-cards {
+        .wrapper {
+            padding-right: 1em;
+            padding-left: 1em;
+            margin-bottom: 3em;
+            @media(max-width: 1024px) {
+                padding-right: 5px;
+                padding-left: 5px;
+            }
+            @media(max-width: 768px) {
+                padding-right: 5px;
+                padding-left: 5px;
+                margin-bottom: 3em;
+                &:last-child {
+                    margin-bottom: 0em;
+                }
+            }
+            .card {
+                padding: 1em;
+                border-radius: 5px;
+                position: relative;
+                box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.16);
+                @media(max-width: 768px) {
+                    padding: .5em;
+                }
+                .blog-img-wrapper {
+                    height: 15em;
+                    position: relative;
+                    @media(max-width: 1024px) {
+                        height: 12em;
+                    }
+                    @media(max-width: 768px) {
+                        height: 12em;
+                    }
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 5px;
+                    }
+                    .date {
+                        background-color: $white;
+                        position: absolute;
+                        bottom: 5%;
+                        inset-inline-end: 0%;
+                        border-start-start-radius: 30px;
+                        border-end-start-radius: 30px;
+                        padding: .5em 1em;
+                        span {
+                            color: $black;
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+                .content-wrapper {
+                    text-align: start;
+                    padding-top: 1em;
+                    padding-bottom: 1.5em;
+                    .title {
+                        color: $blue;
+                    }
+                    .desc {
+                        font-size: 1rem;
+                        color: $black;
+                    }
+                }
+                .btn {
+                    background-color: $black;
+                    padding-right: 1.5em;
+                    padding-left: 1.5em;
+                    border-radius: 30px;
+                    color: $white;
+                    position: absolute;
+                    bottom: -5%;
+                    inset-inline-start: 2%;
+                    z-index: 1;
+                    i {
+                        color: $white;
+                        margin-inline-start: 3px;
+                    }
+                }
+            }
+        }
+    }
+}

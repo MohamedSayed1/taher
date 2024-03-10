@@ -1,0 +1,214 @@
+.login-container {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('/assets/imgs/auth-bg-desktop.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    @media(max-width: 576px) {
+        justify-content: center;
+        background-image: url('/assets/imgs/auth-bg-mobile.png');
+    }
+    .row {
+        width: 100%;
+    }
+    .login-form-wrapper {
+        // width: 100%;
+        // padding: 2em !important;
+        padding-inline-start: 0em;
+        padding-inline-end: 5em !important;
+        @media(max-width: 1024px) {
+            padding-inline-end: 3em !important;
+        }
+        @media(max-width: 768px) {
+            padding-inline-end: 2em !important;
+            padding-inline-start: 1em !important;
+        }
+        @media(max-width: 576px) {
+            padding: 0 !important;
+            background-color: $white;
+            border-radius: 5px;
+            box-shadow: 0px 10px 20px -3px rgba(0, 0, 0, 0.1);
+            padding: 2em 1em !important;
+        }
+        .top-nav-row {
+            text-align: start;
+            @media(max-width: 576px) {
+                display: none;
+            }
+            a {
+                text-decoration: none;
+                font-size: 1.2rem;
+                line-height: 1.7em;
+                i {
+                    color: $gray-700;
+                }
+                span {
+                    color: $blue;
+                    margin-inline-start: 5px;
+                }
+            }
+        }
+        .logo {
+            justify-content: center;
+            @media(max-width: 576px) {
+                margin-right: 0;
+                margin-left: 0;
+            }
+            img {
+                width: 300px;
+            }
+        }
+        .head {
+            text-align: center;
+            @media(max-width: 576px) {
+                margin-right: 0;
+                margin-left: 0;
+            }
+            h1 {
+                color: $blue;
+                font-size: 1.4rem;
+                font-weight: bold;
+            }
+        }
+        .form-wrapper {
+            padding: 1em 0em 1em 2em;
+            @media(max-width: 1024px) {
+                padding: 0;
+            }
+            @media(max-width: 576px) {
+                margin: 0;
+            }
+            .control-wrapper {
+                label {
+                    margin-bottom: 5px;
+                    color: $gray-700;
+                }
+            }
+            .btn-block {
+                width: 100%;
+                background-color: $blue;
+                color: $white;
+            }
+        }
+        .input-wrapper {
+            position: relative;
+            .btn {
+                position: absolute;
+                z-index: 1;
+                inset-inline-end: 0;
+                inset-block-start: 0;
+                color: $gray-700;
+                outline: 0;
+                box-shadow: none;
+            }
+        }
+        #login-eye-slash-icon {
+            display: none;
+        }
+        .row-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            .form-check {
+                width: fit-content;
+                display: inline-block;
+                .container {
+                    display: block;
+                    position: relative;
+                    cursor: pointer;
+                    font-size: 1rem;
+                    color: $gray-700;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                }
+                .text {
+                    margin-inline-start: .5em;
+                    vertical-align: top;
+                }
+                /* Hide the browser's default checkbox */
+                .container input {
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                    height: 0;
+                    width: 0;
+                }
+                /* Create a custom checkbox */
+                .checkmark {
+                    position: absolute;
+                    top: 0;
+                    inset-inline-start: 0;
+                    height: 20px;
+                    width: 20px;
+                    background-color: #eee;
+                }
+                /* On mouse-over, add a grey background color */
+                .container:hover input~.checkmark {
+                    background-color: #ccc;
+                }
+                /* When the checkbox is checked, add a blue background */
+                .container input:checked~.checkmark {
+                    background-color: $blue;
+                }
+                /* Create the checkmark/indicator (hidden when not checked) */
+                .checkmark:after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                }
+                /* Show the checkmark when checked */
+                .container input:checked~.checkmark:after {
+                    display: block;
+                }
+                /* Style the checkmark/indicator */
+                .container .checkmark:after {
+                    inset-inline-start: 7px;
+                    top: 3px;
+                    width: 7px;
+                    height: 11px;
+                    border: solid white;
+                    border-width: 0 3px 3px 0;
+                    -webkit-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                }
+            }
+            .forget-link-wrapper {
+                display: inline-block;
+                text-align: end;
+                a {
+                    color: $blue;
+                    font-size: 1rem;
+                }
+            }
+        }
+        .error {
+            text-align: start;
+            font-size: .9rem;
+        }
+    }
+    .redirection-row {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        span {
+            font-size: 1rem;
+            color: $gray-700;
+            width: fit-content;
+            display: inline-block;
+        }
+        a {
+            color: $blue;
+            width: fit-content;
+            display: inline-block;
+        }
+    }
+}

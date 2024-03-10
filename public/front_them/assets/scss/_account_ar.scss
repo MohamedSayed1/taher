@@ -1,0 +1,223 @@
+.account-page-wrapper {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    @media(max-width: 576px) {
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+    .title-row {
+        .title {
+            font-weight: bold;
+            color: $blue;
+        }
+    }
+    .nav-links-wrapper {
+        @media(max-width: 576px) {
+            padding-right: 0;
+            padding-left: 0;
+        }
+        .nav {
+            padding: 1em;
+            background-color: $blue;
+            border-radius: 50px;
+            @media(max-width: 576px) {
+                padding: .5em;
+                border-radius: 5px;
+                justify-content: center;
+                flex-direction: row !important;
+            }
+            a {
+                cursor: pointer;
+                background-color: transparent;
+                width: fit-content;
+                padding-right: 1em;
+                padding-left: 1em;
+                margin-right: 1em;
+                margin-left: 1em;
+                border-radius: 30px;
+                @media(max-width: 576px) {
+                    margin-right: 0.5em;
+                    margin-left: 0.5em;
+                    margin-bottom: 0.5em;
+                    margin-top: 0.5em;
+                    font-size: .9rem;
+                }
+                i {
+                    color: $white;
+                }
+                span {
+                    color: $white;
+                    margin-inline-start: 5px;
+                }
+                &:hover {
+                    background-color: $white;
+                    i {
+                        color: $blue;
+                    }
+                    span {
+                        color: $blue;
+                        margin-inline-start: 5px;
+                    }
+                    transition: all .3s ease-in-out;
+                }
+            }
+            .active {
+                background-color: $white;
+                i {
+                    color: $blue;
+                }
+                span {
+                    color: $blue;
+                    margin-inline-start: 5px;
+                }
+            }
+        }
+    }
+    .personal-info {
+        .info-card-wrapper {
+            padding: 2em;
+            border-radius: 5px;
+            background-color: $gray-100;
+            @media(max-width: 576px) {
+                padding: 1em;
+            }
+            .item {
+                padding: 1em;
+                background-color: $white;
+                border-radius: 5px;
+                margin-bottom: 1em;
+                text-align: start;
+                .head {
+                    color: $blue;
+                    font-weight: bold;
+                }
+                .data {
+                    color: $gray-700;
+                    font-weight: bold;
+                }
+            }
+        }
+        .btn-wrapper {
+            text-align: center;
+            .btn {
+                background-color: $black;
+                color: $white;
+                border-radius: 30px;
+                padding-right: 1.2em;
+                padding-left: 1.2em;
+            }
+        }
+    }
+    .change-password {
+        display: none;
+        .password-card-wrapper {
+            padding: 2em;
+            border-radius: 5px;
+            background-color: $gray-100;
+            @media(max-width: 576px) {
+                padding: 1em;
+            }
+            .control-wrapper {
+                label {
+                    margin-bottom: 5px;
+                    color: $gray-700;
+                }
+            }
+            .btn-block {
+                width: 100%;
+                background-color: $blue;
+                color: $white;
+            }
+            .input-wrapper {
+                position: relative;
+                .btn {
+                    position: absolute;
+                    z-index: 1;
+                    inset-inline-end: 0;
+                    inset-block-start: 10%;
+                    color: $gray-700;
+                    outline: 0;
+                    box-shadow: none;
+                }
+            }
+            .error {
+                text-align: start;
+                font-size: .9rem;
+            }
+        }
+    }
+    .subscriptions {
+        display: none;
+        .subscriptions-card-wrapper {
+            padding: 2em;
+            @media(max-width: 576px) {
+                padding: 1em;
+            }
+            .sub-head-row {
+                h3 {
+                    text-align: center;
+                    color: $blue;
+                    margin-bottom: 2em;
+                    font-weight: bold;
+                }
+            }
+            .no-sub-row {
+                text-align: center;
+                img {
+                    width: 200px;
+                    margin: auto;
+                }
+                .text {
+                    margin-top: 1em;
+                    color: $gray-700;
+                    font-size: 1.3rem;
+                }
+            }
+            .sub-row {
+                .sub-item {
+                    padding: 1em;
+                    border-radius: 5px;
+                    background-color: $gray-100;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    margin-bottom: 1em;
+                    @media(max-width: 576px) {
+                        align-items: center;
+                    }
+                    .package-data {
+                        display: inline-block;
+                        h5 {
+                            color: $blue;
+                            font-weight: bold;
+                            display: inline-block;
+                            margin-bottom: 0;
+                            @media(max-width: 576px) {
+                                display: block;
+                            }
+                        }
+                        span {
+                            margin-inline-start: 10px;
+                            color: $black;
+                            font-weight: bold;
+                            @media(max-width: 576px) {
+                                display: block;
+                                margin-top: 0.5em;
+                            }
+                        }
+                    }
+                    .sub-btn {
+                        display: inline-block;
+                        .btn {
+                            background-color: $black;
+                            color: $white;
+                            border-radius: 30px;
+                            padding-right: 1.2em;
+                            padding-left: 1.2em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+@import './_variables.scss';
+@import './login_ar.scss';
+@import './signup_ar.scss';
+@import './forget_password_ar.scss';
+@import './reset_password_ar.scss';
+@import './all_packages_ar.scss';
+@import './blog_ar.scss';
+@import './article_ar.scss';
+@import './static_ar.scss';
+@import './contact_ar.scss';
+@import './faq_ar.scss';
+@import './account_ar.scss';
+@import './tests_ar.scss';
+@import './test_ar.scss';
+@import './index_ar.scss';
+html * {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $ar-font;
+    direction: rtl;
+    font-size: 18px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    border-radius: 3px;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: $blue;
+    border-radius: 10px;
+}
