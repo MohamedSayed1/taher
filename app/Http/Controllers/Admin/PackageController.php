@@ -51,15 +51,49 @@ class PackageController extends Controller
      */
     public function store(StorePackageRequest $request)
     {
+
+        $package = new Package;
         if($request->file('photo_desktop'))
         {
             $nameDesk =   saveFile($request->file('photo_desktop'), 'package');
+            $package->photo_desktop = $nameDesk;
         }
         if($request->file('photo_phone'))
         {
-            $namePhone = saveFile($request->file('photo_phone'), 'package');;
+            $namePhone = saveFile($request->file('photo_phone'), 'package');
+            $package->photo_phone = $namePhone;
         }
-        $package = new Package;
+        if($request->file('cove_phone_en'))
+        {
+            $namePhone = saveFile($request->file('cove_phone_en'), 'package');
+            $package->cove_phone_en = $namePhone;
+        }
+        if($request->file('cove_phone_nl'))
+        {
+            $namePhone = saveFile($request->file('cove_phone_nl'), 'package');
+            $package->cove_phone_nl = $namePhone;
+        }
+        if($request->file('cove_phone_ar'))
+        {
+            $namePhone = saveFile($request->file('cove_phone_ar'), 'package');
+            $package->cove_phone_ar = $namePhone;
+        }
+        if($request->file('cove_desktop_nl'))
+        {
+            $namePhone = saveFile($request->file('cove_desktop_nl'), 'package');
+            $package->cove_desktop_nl = $namePhone;
+        }
+        if($request->file('cove_desktop_en'))
+        {
+            $namePhone = saveFile($request->file('cove_desktop_en'), 'package');
+            $package->cove_desktop_en = $namePhone;
+        }
+        if($request->file('cove_desktop_ar'))
+        {
+            $namePhone = saveFile($request->file('cove_desktop_ar'), 'package');
+            $package->cove_desktop_ar = $namePhone;
+        }
+        $package->type_view = $request->type_view;
         $package->name_ar = $request->name_ar;
         $package->name_en = $request->name_en;
         $package->name_nl = $request->name_nl;
@@ -72,8 +106,6 @@ class PackageController extends Controller
         $package->badge_en = $request->badge_en;
         $package->badge_nl = $request->badge_nl;
         $package->arrangement = $request->arrangement;
-        $package->photo_desktop = isset($nameDesk)?$nameDesk:null;
-        $package->photo_phone = isset($namePhone)?$namePhone:null;
         $package->color_background = $request->color_background;
         $package->color_border = $request->color_border;
         $package->active = ($request->active == 'on') ? true : false;
@@ -128,7 +160,38 @@ class PackageController extends Controller
             $namePhone = saveFile($request->file('photo_phone'), 'package');
             $package->photo_phone = $namePhone;
         }
+        if($request->file('cove_phone_en'))
+        {
+            $namePhone = saveFile($request->file('cove_phone_en'), 'package');
+            $package->cove_phone_en = $namePhone;
+        }
+        if($request->file('cove_phone_nl'))
+        {
+            $namePhone = saveFile($request->file('cove_phone_nl'), 'package');
+            $package->cove_phone_nl = $namePhone;
+        }
+        if($request->file('cove_phone_ar'))
+        {
+            $namePhone = saveFile($request->file('cove_phone_ar'), 'package');
+            $package->cove_phone_ar = $namePhone;
+        }
+        if($request->file('cove_desktop_nl'))
+        {
+            $namePhone = saveFile($request->file('cove_desktop_nl'), 'package');
+            $package->cove_desktop_nl = $namePhone;
+        }
+        if($request->file('cove_desktop_en'))
+        {
+            $namePhone = saveFile($request->file('cove_desktop_en'), 'package');
+            $package->cove_desktop_en = $namePhone;
+        }
+        if($request->file('cove_desktop_ar'))
+        {
+            $namePhone = saveFile($request->file('cove_desktop_ar'), 'package');
+            $package->cove_desktop_ar = $namePhone;
+        }
 
+        $package->type_view = $request->type_view;
         $package->name_ar = $request->name_ar;
         $package->name_en = $request->name_en;
         $package->name_nl = $request->name_nl;

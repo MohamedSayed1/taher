@@ -64,6 +64,37 @@ class TheoryPackageController extends Controller
             $image = saveFile($request->file('photo_phone'), 'theorypackage');
             $package->photo_phone = $image;
         }
+        if($request->file('cove_phone_en'))
+        {
+            $namePhone = saveFile($request->file('cove_phone_en'), 'theorypackage');
+            $package->cove_phone_en = $namePhone;
+        }
+        if($request->file('cove_phone_nl'))
+        {
+            $namePhone = saveFile($request->file('cove_phone_nl'), 'theorypackage');
+            $package->cove_phone_nl = $namePhone;
+        }
+        if($request->file('cove_phone_ar'))
+        {
+            $namePhone = saveFile($request->file('cove_phone_ar'), 'theorypackage');
+            $package->cove_phone_ar = $namePhone;
+        }
+        if($request->file('cove_desktop_nl'))
+        {
+            $namePhone = saveFile($request->file('cove_desktop_nl'), 'theorypackage');
+            $package->cove_desktop_nl = $namePhone;
+        }
+        if($request->file('cove_desktop_en'))
+        {
+            $namePhone = saveFile($request->file('cove_desktop_en'), 'theorypackage');
+            $package->cove_desktop_en = $namePhone;
+        }
+        if($request->file('cove_desktop_ar'))
+        {
+            $namePhone = saveFile($request->file('cove_desktop_ar'), 'theorypackage');
+            $package->cove_desktop_ar = $namePhone;
+        }
+        $package->type_view = $request->type_view;
         $package->name_ar = $request->name_ar;
         $package->color_border = $request->color_border;
         $package->color_background = $request->color_background;
@@ -143,6 +174,37 @@ class TheoryPackageController extends Controller
             $image = saveFile($request->file('photo_phone'), 'theorypackage');
             $theoryPackage->photo_phone = $image;
         }
+        if($request->file('cove_phone_en'))
+        {
+            $namePhone = saveFile($request->file('cove_phone_en'), 'theorypackage');
+            $theoryPackage->cove_phone_en = $namePhone;
+        }
+        if($request->file('cove_phone_nl'))
+        {
+            $namePhone = saveFile($request->file('cove_phone_nl'), 'theorypackage');
+            $theoryPackage->cove_phone_nl = $namePhone;
+        }
+        if($request->file('cove_phone_ar'))
+        {
+            $namePhone = saveFile($request->file('cove_phone_ar'), 'theorypackage');
+            $theoryPackage->cove_phone_ar = $namePhone;
+        }
+        if($request->file('cove_desktop_nl'))
+        {
+            $namePhone = saveFile($request->file('cove_desktop_nl'), 'theorypackage');
+            $theoryPackage->cove_desktop_nl = $namePhone;
+        }
+        if($request->file('cove_desktop_en'))
+        {
+            $namePhone = saveFile($request->file('cove_desktop_en'), 'theorypackage');
+            $theoryPackage->cove_desktop_en = $namePhone;
+        }
+        if($request->file('cove_desktop_ar'))
+        {
+            $namePhone = saveFile($request->file('cove_desktop_ar'), 'theorypackage');
+            $theoryPackage->cove_desktop_ar = $namePhone;
+        }
+        $theoryPackage->type_view = $request->type_view;
         $theoryPackage->name_ar = $request->name_ar;
         $theoryPackage->name_en = $request->name_en;
         $theoryPackage->name_nl = $request->name_nl;

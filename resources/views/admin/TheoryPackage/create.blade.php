@@ -310,6 +310,148 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label class="label-default" for="type_view">{{__('messages.type_view')}}:</label>
+                            <select class="form-control select2-container" name="type_view" id="type_view">
+                                <option value="text" {{old('type_view')!=null && old('type_view') == 'text'?'selected':''}}>{{__('messages.choseText')}}</option>
+                                <option value="photo" {{old('type_view')!=null && old('type_view') == 'photo'?'selected':''}}>{{__('messages.chosephoto')}}</option>
+                            </select>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-lg-12 mx-auto">
+                                    <div class="custom-file-container">
+                                        <div class="cove_desktop_ar_file">
+                                            <input type="file" name="cove_desktop_ar" class="cove_desktop_ar-input"
+                                                   id="cove_desktop_ar">
+                                            <label class="custom-file-label"
+                                                   for="cove_desktop_ar">{{ trans('messages.cove_desktop_ar') }}</label>
+                                        </div>
+                                        <div class="bg-lightest p-10 rounded5 dvPreview text-center cove_desktop_ar"
+                                             style="width: 100%;margin-top: 1em;height: 10em;">
+                                            <img style="max-width: 100%;height: 100%;" src="{{ url('/images/noimg.png') }}"
+                                                 alt="">
+                                        </div>
+                                    </div>
+                                    @error('cove_desktop_ar')
+                                    <div class="badge badge-danger text-center" style="width: 100%">{{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-12 mx-auto">
+                                    <div class="custom-file-container_2">
+                                        <div class="cove_phone_ar_2">
+                                            <input type="file" name="cove_phone_ar" class="cove_phone_ar_2"
+                                                   id="cove_phone_ar">
+                                            <label class="custom-file-label"
+                                                   for="cove_phone_ar">{{ trans('messages.cove_phone_ar') }}</label>
+                                        </div>
+                                        <div class="bg-lightest p-10 rounded5 dvPreview text-center cove_phone_ar_2"
+                                             style="width: 100%;margin-top: 1em;height: 10em;">
+                                            <img style="max-width: 100%;height: 100%;" src="{{ url('/images/noimg.png') }}"
+                                                 alt="">
+                                        </div>
+                                    </div>
+                                    @error('cove_phone_ar')
+                                    <div class="badge badge-danger text-center" style="width: 100%">{{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-lg-12 mx-auto">
+                                    <div class="custom-file-container_2">
+                                        <div class="cove_desktop_en_2">
+                                            <input type="file" name="cove_desktop_en" class="cove_desktop_en_2"
+                                                   id="cove_desktop_en">
+                                            <label class="custom-file-label"
+                                                   for="cove_desktop_en">{{ trans('messages.cove_desktop_en') }}</label>
+                                        </div>
+                                        <div class="bg-lightest p-10 rounded5 dvPreview text-center cove_desktop_en_2"
+                                             style="width: 100%;margin-top: 1em;height: 10em;">
+                                            <img style="max-width: 100%;height: 100%;" src="{{ url('/images/noimg.png') }}"
+                                                 alt="">
+                                        </div>
+                                    </div>
+                                    @error('cove_desktop_en')
+                                    <div class="badge badge-danger text-center" style="width: 100%">{{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-12 mx-auto">
+                                    <div class="custom-file-container_2">
+                                        <div class="cove_phone_en_2">
+                                            <input type="file" name="cove_phone_en" class="cove_phone_en_2"
+                                                   id="cove_phone_en">
+                                            <label class="custom-file-label"
+                                                   for="cove_phone_en">{{ trans('messages.cove_phone_en') }}</label>
+                                        </div>
+                                        <div class="bg-lightest p-10 rounded5 dvPreview text-center cove_phone_en_2"
+                                             style="width: 100%;margin-top: 1em;height: 10em;">
+                                            <img style="max-width: 100%;height: 100%;" src="{{ url('/images/noimg.png') }}"
+                                                 alt="">
+                                        </div>
+                                    </div>
+                                    @error('cove_phone_en')
+                                    <div class="badge badge-danger text-center" style="width: 100%">{{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-lg-12 mx-auto">
+                                    <div class="custom-file-container_2">
+                                        <div class="cove_desktop_nl_2">
+                                            <input type="file" name="cove_desktop_nl" class="cove_desktop_nl_2"
+                                                   id="cove_desktop_nl">
+                                            <label class="custom-file-label"
+                                                   for="cove_desktop_nl">{{ trans('messages.cove_desktop_nl') }}</label>
+                                        </div>
+                                        <div class="bg-lightest p-10 rounded5 dvPreview text-center cove_desktop_nl_2"
+                                             style="width: 100%;margin-top: 1em;height: 10em;">
+                                            <img style="max-width: 100%;height: 100%;" src="{{ url('/images/noimg.png') }}"
+                                                 alt="">
+                                        </div>
+                                    </div>
+                                    @error('cove_desktop_nl')
+                                    <div class="badge badge-danger text-center" style="width: 100%">{{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-12 mx-auto">
+                                    <div class="custom-file-container_2">
+                                        <div class="cove_phone_nl_2">
+                                            <input type="file" name="cove_phone_nl" class="cove_phone_nl_2"
+                                                   id="cove_phone_nl">
+                                            <label class="custom-file-label"
+                                                   for="cove_phone_nl">{{ trans('messages.cove_phone_nl') }}</label>
+                                        </div>
+                                        <div class="bg-lightest p-10 rounded5 dvPreview text-center cove_phone_nl_2"
+                                             style="width: 100%;margin-top: 1em;height: 10em;">
+                                            <img style="max-width: 100%;height: 100%;" src="{{ url('/images/noimg.png') }}"
+                                                 alt="">
+                                        </div>
+                                    </div>
+                                    @error('cove_phone_en')
+                                    <div class="badge badge-danger text-center" style="width: 100%">{{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
@@ -347,6 +489,119 @@
 
                         img_src.attr("src", e.target.result);
                         $('.custem-css-templet_2 img').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL($(this)[0].files[0]);
+                } else {
+                    alert("This browser does not support FileReader.");
+                }
+            } else {
+                alert("Please upload a valid image file.");
+            }
+        });
+
+        $(".cove_phone_ar_2").change(function () {
+            var img_src = jQuery(this).parents('.cove_phone_ar_2').parents('.custom-file-container_2').find("img");
+            var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+            if (regex.test($(this).val().toLowerCase())) {
+                if (typeof (FileReader) != "undefined") {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+
+                        img_src.attr("src", e.target.result);
+                        $('.cove_phone_ar_2 img').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL($(this)[0].files[0]);
+                } else {
+                    alert("This browser does not support FileReader.");
+                }
+            } else {
+                alert("Please upload a valid image file.");
+            }
+        });
+        $(".cove_desktop_en_2").change(function () {
+            var img_src = jQuery(this).parents('.cove_desktop_en_2').parents('.custom-file-container_2').find("img");
+            var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+            if (regex.test($(this).val().toLowerCase())) {
+                if (typeof (FileReader) != "undefined") {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+
+                        img_src.attr("src", e.target.result);
+                        $('.cove_desktop_en img').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL($(this)[0].files[0]);
+                } else {
+                    alert("This browser does not support FileReader.");
+                }
+            } else {
+                alert("Please upload a valid image file.");
+            }
+        });
+        $(".cove_phone_en_2").change(function () {
+            var img_src = jQuery(this).parents('.cove_phone_en_2').parents('.custom-file-container_2').find("img");
+            var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+            if (regex.test($(this).val().toLowerCase())) {
+                if (typeof (FileReader) != "undefined") {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+
+                        img_src.attr("src", e.target.result);
+                        $('.cove_phone_en img').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL($(this)[0].files[0]);
+                } else {
+                    alert("This browser does not support FileReader.");
+                }
+            } else {
+                alert("Please upload a valid image file.");
+            }
+        });
+        $(".cove_phone_nl_2").change(function () {
+            var img_src = jQuery(this).parents('.cove_phone_nl_2').parents('.custom-file-container_2').find("img");
+            var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+            if (regex.test($(this).val().toLowerCase())) {
+                if (typeof (FileReader) != "undefined") {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+
+                        img_src.attr("src", e.target.result);
+                        $('.cove_phone_nl img').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL($(this)[0].files[0]);
+                } else {
+                    alert("This browser does not support FileReader.");
+                }
+            } else {
+                alert("Please upload a valid image file.");
+            }
+        });
+        $(".cove_desktop_nl_2").change(function () {
+            var img_src = jQuery(this).parents('.cove_desktop_nl_2').parents('.custom-file-container_2').find("img");
+            var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+            if (regex.test($(this).val().toLowerCase())) {
+                if (typeof (FileReader) != "undefined") {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+
+                        img_src.attr("src", e.target.result);
+                        $('.cove_desktop_nl img').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL($(this)[0].files[0]);
+                } else {
+                    alert("This browser does not support FileReader.");
+                }
+            }
+        });
+        $(".cove_desktop_ar-input").change(function () {
+            var img_src = jQuery(this).parents('.cove_desktop_ar_file').parents('.cove_desktop_ar').find("img");
+            var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+            if (regex.test($(this).val().toLowerCase())) {
+                if (typeof (FileReader) != "undefined") {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+
+                        img_src.attr("src", e.target.result);
+                        $('.cove_desktop_ar img').attr('src', e.target.result);
                     }
                     reader.readAsDataURL($(this)[0].files[0]);
                 } else {

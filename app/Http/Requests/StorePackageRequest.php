@@ -21,6 +21,12 @@ class StorePackageRequest extends FormRequest
             'expiration_duration_in_dayes' => 'required',
             "photo_phone"=> "required|image|mimes:jpeg,png,jpg,gif|max:2048",
             "photo_desktop"=> "required|image|mimes:jpeg,png,jpg,gif|max:2048",
+            "cove_desktop_nl"=> "required_if:type_view,photo|nullable|image|mimes:jpeg,png,jpg,gif|max:2048",
+            "cove_desktop_en"=> "required_if:type_view,photo|nullable|image|mimes:jpeg,png,jpg,gif|max:2048",
+            "cove_desktop_ar"=> "required_if:type_view,photo|nullable|image|mimes:jpeg,png,jpg,gif|max:2048",
+            "cove_phone_ar"=> "required_if:type_view,photo|nullable|image|mimes:jpeg,png,jpg,gif|max:2048",
+            "cove_phone_nl"=> "required_if:type_view,photo|nullable|image|mimes:jpeg,png,jpg,gif|max:2048",
+            "cove_phone_en"=> "required_if:type_view,photo|nullable|image|mimes:jpeg,png,jpg,gif|max:2048",
         ];
     }
 }
