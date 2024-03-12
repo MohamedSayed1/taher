@@ -614,11 +614,11 @@
         transform: scale(1);
         filter: blur(0px);
         opacity: 1;
-        box-shadow: 0 8px 20px 0px rgba(0, 0, 0, 0.125);
+        box-shadow:unset;
         background: #1ba9ff !important;
         color: white !important;
         cursor: pointer;
-        border: 1px solid transparent !important;
+        border: unset !important;
     }
 
     .form-check-input, .form-check-input + label {
@@ -692,24 +692,29 @@
                     @endif
                     @foreach($packages as $key => $package)
                         <div class="col-lg-4 col-md-6 col-sm-12"  style="{{$loop->iteration ==2?'padding-inline:2rem;':''}}">
+                        @if($package->type_view == 'photo' && $package->{'cove_desktop_' . App::getLocale()} != null )
                             <a href="{{route('start_package')}}" for="{{$package->id}}" class="package-card"
-                               style=" color:black;position:relative;display: block;text-decoration:none;background-color:{{$package->color_background!= null?$package->color_background:'#0000ff30' }}; border:1px solid {{$package->color_border!= null?$package->color_border:'#b3b3b3'}}; width:100%; border-radius:5px; padding:1.5rem 4rem 1.5rem 1.5rem; {{$loop->iteration ==2?'transform:scale(1.1);':''}}">
-                                @if($package->type_view == 'photo' && $package->{'cove_desktop_' . App::getLocale()} != null )
+                               style=" color:black;position:relative;display: block;text-decoration:none; width:100%; {{$loop->iteration ==2?'transform:scale(1.1);':''}}">
+                               
                                     <div class="package-wrapper">
                                         <div
                                             class="package-header d-flex align-items-center justify-content-between flex-wrap">
                                             @if(!empty($package->{'cove_desktop_' . App::getLocale()}) && file_exists(public_path().'/'.$package->{'cove_desktop_' . App::getLocale()}) )
-                                                <img style="height:100px; width:200px;aspect-ratio:2/1;"
+                                                <img style="width:100%;aspect-ratio:1/1;"
                                                      src="{{ url($package->{'cove_desktop_' . App::getLocale()}) }}"
                                                      alt="">
                                             @else
-                                                <img style="height:100px; width:200px;aspect-ratio:2/1;"
+                                                <img style="width:100%;aspect-ratio:1/1;"
                                                      src="{{ url('front_them/assets/imgs/02.png') }}"
                                                      alt="">
                                             @endif
                                         </div>
                                     </div>
+                                    </a>
                                 @else
+                                <a href="{{route('start_package')}}" for="{{$package->id}}" class="package-card"
+                               style=" color:black;position:relative;display: block;text-decoration:none;background-color:{{$package->color_background!= null?$package->color_background:'#0000ff30' }}; border:1px solid {{$package->color_border!= null?$package->color_border:'#b3b3b3'}}; width:100%; border-radius:5px; padding:1.5rem 4rem 1.5rem 1.5rem; {{$loop->iteration ==2?'transform:scale(1.1);':''}}">
+                               
                                     @if($package->{'badge_' . App::getLocale()} != null)
                                         <span class="offer_badge"
                                               offer-content="{{$package->{'badge_' . App::getLocale()} }}">
@@ -720,10 +725,10 @@
                                         <div
                                             class="package-header d-flex align-items-center justify-content-between flex-wrap">
                                             @if(!empty($package->photo_desktop) && file_exists(public_path().'/'.$package->photo_desktop) )
-                                                <img style="height:100px; width:200px;aspect-ratio:2/1;"
+                                                <img style="height:100px;width:auto;aspect-ratio:1/1;"
                                                      src="{{ url($package->photo_desktop) }}" alt="">
                                             @else
-                                                <img style="height:100px; width:200px;aspect-ratio:2/1;"
+                                                <img style="height:100px;width:auto;aspect-ratio:1/1;"
                                                      src="{{ url('front_them/assets/imgs/02.png') }}"
                                                      alt="">
                                             @endif
@@ -771,9 +776,10 @@
                                             </ul>
                                         </div>
                                     </div>
+                                    </a>
                                 @endif
 
-                            </a>
+                           
                         </div>
                     @endforeach
                 </div>
@@ -791,7 +797,7 @@
     <div class="row justify-content-center mx-2" style="border:3px solid #c9c9c9; border-radius:20px">
         <div class="col-12 text-center mb-5">
             @if ($moreThanOneLang > 1)
-                <div class="row lang-container mx-5 home-header-chang-lang">
+                <div class="row lang-container mx-5 home-header-chang-lang flex-nowrap">
                     @if ($langAndDefaultLang->lang_ar == true)
                         <a href="javascript:void(0)" data-code="ar" class="lang-change lang-btn"
                            style="color:black; border:2px solid grey; border-radius:10px; margin-inline-end:5px">
@@ -848,32 +854,39 @@
                                 <div class="row justify-content-center">
                                     <div class="col-10 mb-4" style="padding-inline:2rem">
                                         @endif
+                                        @if($package->type_view == 'photo' && $package->{'cove_phone_' . App::getLocale()} != null )
                                         <a href="{{route('start_package')}}" for="mob_{{$package->id}}"
                                            class="package-card"
-                                           style="color:black;display: block;text-decoration:none;position:relative;background-color:{{$package->color_background!= null?$package->color_background:'#0000ff30' }}; border:1px solid {{$package->color_border!= null?$package->color_border:'#b3b3b3'}}; width:100%; border-radius:5px; padding:1rem; {{$loop->iteration ==1?'transform:scale(1.1);':''}}">
+                                           style="color:black;display: block;text-decoration:none;position:relative; width:100%; border-radius:5px; {{$loop->iteration ==1?'transform:scale(1.1);':''}}">
 
-                                            @if($package->type_view == 'photo' && $package->{'cove_phone_' . App::getLocale()} != null )
+                                            
                                                 <div class="package-wrapper">
                                                     <div class="package-header d-flex align-items-center justify-content-between">
                                                         @if(!empty($package->{'cove_phone_' . App::getLocale()}) && file_exists(public_path().'/'.$package->{'cove_phone_' . App::getLocale()}) )
                                                             <img
-                                                                style="height:100px;width:120px;aspect-ratio:1/1; margin-inline-start:1rem"
+                                                                style="width:100%;aspect-ratio:1/1;"
                                                                 src="{{ url($package->{'cove_phone_' . App::getLocale()}) }}"
                                                                 alt="">
                                                         @else
                                                             <img
-                                                                style="height:100px; width:120px;aspect-ratio:1/1; margin-inline-start:1rem"
+                                                                style=" width:100%;aspect-ratio:1/1;"
                                                                 src="{{ url('front_them/assets/imgs/02.png') }}"
                                                                 alt="">
                                                         @endif
                                                     </div>
                                                 </div>
+                                                </a>
                                             @else
+                                            <a href="{{route('start_package')}}" for="mob_{{$package->id}}"
+                                           class="package-card"
+                                           style="color:black;display: block;text-decoration:none;position:relative;background-color:{{$package->color_background!= null?$package->color_background:'#0000ff30' }}; border:1px solid {{$package->color_border!= null?$package->color_border:'#b3b3b3'}}; width:100%; border-radius:5px; padding:1rem; {{$loop->iteration ==1?'transform:scale(1.1);':''}}">
+
 
                                             @if($package->{'badge_' . App::getLocale()} != null)
                                                 <div class="ribbon ribbon-top-right">
                                                     <span>{{$package->{'badge_' . App::getLocale()} }}</span>
                                                 </div>
+                                        
                                             @endif
 
                                             <div class="package-wrapper">
@@ -935,8 +948,9 @@
                                                     </ul>
                                                 </div>
                                             </div>
+                                            </a>
                                             @endif
-                                        </a>
+                                        
 
                                         @if($loop->iteration ==1)
                                     </div>

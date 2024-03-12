@@ -1,15 +1,15 @@
 @if( Request::is('/'))
 <div class="container nav-bar-container pt-2">
-    <nav class="pc-navbar d-flex flex-wrap align-items-center justify-content-lg-start navbar navbar-expand-lg">
+    <nav class="pc-navbar d-flex flex-nowrap align-items-center justify-content-between navbar navbar-expand-lg">
         <a href="{{ route('home') }}" class="d-flex logo align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
             <img src="{{ url('front_them/assets/imgs/small-logo.png') }}" alt="">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa-solid fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="nav navbar-nav col-12 col-lg-auto ms-lg-auto mb-2 justify-content-center mb-md-0">
+        </button> -->
+        <div class="d-flex align-tems-center justify-content-between w-100" id="navbarSupportedContent">
+            <ul class="nav d-flex flex-nowrap col-lg-auto ms-lg-auto mb-2 justify-content-center mb-md-0">
                 <!--li><a href="{{ route('home') }}"
                         class="nav-link {{ Route::currentRouteName() == 'home' ? 'active' : '' }}  px-3 pb-0 link-dark">{{ trans('messages.Home') }}</a>
                 </li-->
@@ -57,10 +57,8 @@
                     </ul>
                 @endguest
             </div-->
-            <div class="nav-btns">
-
+            <div class="nav-btns d-flex align-items-center flex-wrap">
                 @if(Auth()->check())
-
                     <a id="logout-click-button" class="btn bg-danger" style="color:white" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">{{ trans('messages.Logout') }}
@@ -78,7 +76,6 @@
 
                     @endif
             </div>
-
         </div>
     </nav>
 </div>

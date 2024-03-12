@@ -924,7 +924,7 @@
 }
 
 .package-card .ribbon span {
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
     color: #FFF;
     text-transform: uppercase;
@@ -5956,6 +5956,23 @@ body {
     .course-img-mobile {
         display: inline-block !important;
     }
+    
+    .nav-bar-container .nav .nav-link {
+        padding: 0 5px!important;
+        margin-bottom: 0 !important;
+        white-space: nowrap;
+        font-weight: 700;
+    }
+
+    .nav-bar-container .nav-btns .btn{
+        padding: 2px !important;
+        font-size: 14px !important;
+        font-weight: 700;
+    }
+}
+
+.nav-bar-container .nav-btns .btn:first-of-type{
+    margin-inline-end: 4px;
 }
 
 

@@ -7,22 +7,18 @@
     <div class="register-gate my-5" style="overflow:hidden">
         <div class="row justify-content-center">
             <div class="col-xxl-6 col-md-10">
-                <div class="row gx-5 mb-4">
+                <div class="row gx-5 mb-4 align-items-stretch">
                     <div class="col-6">
-                        <div class="register-txt"
-                             style="background-color:#1ba9ff40; border:1px solid #1ba9ff; border-radius:10px; padding:1rem">
-                            <a style="text-decoration:none" href="{{route('login')}}">
-                                <span>{{ trans('messages.LoginLink') }}</span>
-                            </a>
-                        </div>
+                        <a class="login-txt d-inline-block w-100 btn bg-danger text-white" href="{{route('login')}}"
+                             style="background-color:#1ba9ff40; border:1px solid #1ba9ff; border-radius:10px; padding:1rem; font-weight:700; font-size:20px">
+                             {{ trans('messages.LoginLink') }}
+                        </a>
                     </div>
                     <div class="col-6">
-                        <div class="login-txt"
-                             style="background-color:#71ff5d40; border:1px solid #00b81e; border-radius:10px; padding:1rem">
-                            <a style="text-decoration:none" href="{{route('register')}}">
-                                <span>{{ trans('messages.RegisterLink') }}</span>
-                            </a>
-                        </div>
+                        <a class="register-txt d-inline-block w-100 btn bg-primary text-white" href="{{route('register')}}"
+                             style="background-color:#71ff5d40; border:1px solid #00b81e; border-radius:10px; padding:1rem; font-weight:700; font-size:20px">
+                                {{ trans('messages.RegisterLink') }}
+                        </a>
                     </div>
                 </div>
                 <!--div class="row">

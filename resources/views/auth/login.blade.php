@@ -39,7 +39,7 @@
                 <div class="row head">
                     <h1>{{ trans('messages.Login') }}</h1>
                 </div> -->
-                <div class="row form-wrapper mt-3">
+                <div class="row form-wrapper mt-3" style="padding-bottom:0 !important">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="control-wrapper mb-3">
@@ -78,12 +78,17 @@
                                 @endif
                             </div>
                         </div>
-                        <button class="btn btn-block mt-4" type="submit">{{ trans('messages.Login') }}</button>
+                        <button class="btn btn-danger w-100 mt-4"style=" font-weight:700; font-size:20px" type="submit">{{ trans('messages.Login') }}</button>
                     </form>
                 </div>
-                <div class="row redirection-row mt-3" style="font-weight:900;">
-                    <span style="font-size:1.2rem">{{ trans('messages.Dont have an account?') }}</span>
-                    <a href="{{ route('register') }}">{{ trans('messages.Create new account') }}</a>
+                <div class="row redirection-row mt-3" style="font-weight:900;padding: 0em 0.5em 1em 2.5em;">
+                    <!-- <span style="font-size:1.2rem">{{ trans('messages.Dont have an account?') }}</span>
+                    <a href="{{ route('register') }}">{{ trans('messages.Create new account') }}</a> -->
+
+                    <a class="register-txt d-inline-block w-100 btn bg-primary text-white" href="{{route('register')}}"
+                             style="background-color:#71ff5d40; border:1px solid #00b81e; border-radius:5px; padding:0.5rem 0; font-weight:700;; font-size:20px">
+                                {{ trans('messages.RegisterLink') }}
+                        </a>
                 </div>
             </div>
         </div>

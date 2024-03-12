@@ -68,7 +68,7 @@
             <div class="row head">
                 <h1>{{ trans('messages.Create new account') }}</h1>
             </div> -->
-            <div-- class="row">
+            <div class="row">
                 <!-- <div class="col-md-9 form-wrapper mt-1"> -->
 
                 <form method="POST" action="{{ route('register') }}" id="register-user-form">
@@ -204,7 +204,7 @@
                     @endif
                     </div>
                 </div> -->
-                    <button class="btn btn-block mt-4"
+                    <button class="btn btn-block mt-4" style=" font-weight:700; font-size:20px"
                             type="submit">{{ trans('messages.Create new account') }}</button>
                 </form>
                 <!-- </div> -->
@@ -221,9 +221,13 @@
 
                 @endif -->
             </div>
-            <div class="row redirection-row mt-2" style="font-weight:900;">
-                <span style="font-size:1.2rem">{{ trans('messages.You have an account ?') }}</span>
-                <a href="{{ route('login') }}">{{ trans('messages.Login') }}</a>
+            <div class="row redirection-row mt-2" style="font-weight:900;padding: 0em 0.5em 1em 0.5em">
+                <!-- <span style="font-size:1.2rem">{{ trans('messages.You have an account ?') }}</span>
+                <a href="{{ route('login') }}">{{ trans('messages.Login') }}</a> -->
+                <a class="login-txt d-inline-block w-100 btn bg-danger text-white" href="{{route('login')}}"
+                             style="background-color:#1ba9ff40; border-radius:5px; padding:0.5rem; font-weight:700; font-size:20px">
+                             {{ trans('messages.LoginLink') }}
+                </a>
             </div>
 
         </div>
