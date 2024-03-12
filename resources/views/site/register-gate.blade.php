@@ -25,13 +25,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <!--div class="row">
                     <div class="col-12">
                         <a style="text-decoration:none" href="{{ route('password.request') }}">
                             <p class="alert alert-danger text-center">{{ trans('messages.PasswordLink') }}</p>
                         </a>
                     </div>
-                </div>
+                </div-->
                 <div class="row justify-content-center">
                     <div class="col-xxl-5 col-md-10">
                         <div class="video-content text-center">

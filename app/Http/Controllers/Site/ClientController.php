@@ -182,8 +182,9 @@ class ClientController extends Controller
 
         $package = TheoryPackage::find($request->theory_package);
         $whatsapp_num = $request->whatsapp_num;
-        $name = $request->name;
+        $name = $request->email;
         $email = $request->email;
+        $payment_method = $request->payment;
         if ($package) {
             if (Auth::check()) {
                 $if_subscribed = TheorySubscription::where(['user_id' => auth()->user()->id, 'theory_package_id' => $request->theory_package])->whereDate('expiration_date', '>', now())->first();
@@ -230,6 +231,7 @@ class ClientController extends Controller
                     "user_type" => Auth::check() ? 'user' : 'guest',
                     "lang" => App::getLocale(),
                 ],
+                "method" => $payment_method,
             ]);
             return redirect($payment->getCheckoutUrl(), 303);
 

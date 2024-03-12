@@ -16,6 +16,8 @@
     <link rel='stylesheet' href='https://bevacqua.github.io/dragula/dist/dragula.css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="{{ url('front_them/assets/css/style_' . App::getLocale() . '.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/ms-dropdown@4.0.3/dist/css/dd.min.css" />
+
 </head>
 
 <body>
@@ -37,6 +39,7 @@
     <script src="{{ url('front_them/assets/js/sweetalert2.js') }}"></script>
     <script type="module" src="{{ url('front_them/assets/js/test.js')}}"></script>
     <script src="{{ url('front_them/assets/js/index.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ms-dropdown@4.0.3/dist/js/dd.min.js"></script>
     @yield('script')
     <script type="text/javascript">
         $('.lang-change').on('click', function(e) {

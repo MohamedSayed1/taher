@@ -83,7 +83,7 @@
     </nav>
 </div>
 @else
-<nav>
+<nav class="pc-navbar">
     <div class="container-fluid d-flex align-items-center justify-content-between">
         <a href="{{ route('home') }}" class="logo">
             <img src="{{ url('front_them/assets/imgs/small-logo.png') }}" alt="">
@@ -99,4 +99,4 @@
         </a>
     </div>
 </nav>
-    @endif
+@endif

@@ -54,12 +54,14 @@
 
 
 
+
     @endif
     @if ($langAndDefaultLang->lang_en == true)
         <a href="javascript:void(0)" data-code="en" class="lang-change lang-btn">
             <img src="{{ url('front_them/assets/imgs/Flag_of_the_United_Kingdom.png') }}" alt="mdo"
                                  width="100" height="60">
                         </a>
+
 
 
 
@@ -94,8 +96,10 @@
 
 
 
+
     @endif
     </div>
+
 
 
 
@@ -117,6 +121,7 @@
     <div class="alert alert-danger" style="margin-bottom: 3em">
 {{ session('error') }}
     </div>
+
 
 
 
@@ -154,6 +159,7 @@
 
 
 
+
             @else
                 <a style="text-decoration:none"
                    href="{{ route('purchasePackage', ['package', $package->id]) }}">
@@ -171,9 +177,11 @@
 
 
 
+
             @endif
         @else
             <a style="text-decoration:none" href="{{ route('register') }}">
+
 
 
 
@@ -213,8 +221,10 @@
 
 
 
+
         @else
             <span>{{ $package->price }}</span>
+
 
 
 
@@ -254,9 +264,11 @@
 
 
 
+
             @else
                 <a href="{{ route('purchasePackage', ['package', $package->id]) }}"
                                                                        class="btn">{{ trans('messages.buyNow') }}</a>
+
 
 
 
@@ -289,10 +301,12 @@
 
 
 
+
         @endif
 
         </a>
 </div>
+
 
 
 
@@ -327,6 +341,7 @@
 
 
 
+
             @else
                 <a style="text-decoration:none"
                    href="{{ route('purchasePackage', ['package', $package->id]) }}">
@@ -344,9 +359,11 @@
 
 
 
+
             @endif
         @else
             <a style="text-decoration:none" href="{{ route('register') }}">
+
 
 
 
@@ -383,8 +400,10 @@
 
 
 
+
         @else
             <span>{{ $package->price }}</span>
+
 
 
 
@@ -424,9 +443,11 @@
 
 
 
+
             @else
                 <a href="{{ route('purchasePackage', ['package', $package->id]) }}"
                                                                        class="btn">{{ trans('messages.buyNow') }}</a>
+
 
 
 
@@ -459,6 +480,7 @@
 
 
 
+
         @endif
         </a>
 </div>
@@ -477,9 +499,11 @@
 
 
 
+
     @endif
 @empty
     <h3>{{ trans('messages.No Packages') }}</h3>
+
 
 
 
@@ -574,9 +598,11 @@
         box-shadow: -140px -140px #020a00;
         background-image: linear-gradient(45deg, #020a00 0%, #25d511 51%, #0b4700 100%);
     }
-    .packages-container,  .package-card{
-        transition:0.4s all ease
+
+    .packages-container, .package-card {
+        transition: 0.4s all ease
     }
+
     .packages-container:hover .package-card {
         filter: blur(3px);
         opacity: .5;
@@ -598,12 +624,12 @@
     .form-check-input, .form-check-input + label {
         cursor: pointer;
     }
-    
-    .btn, .lang-btn{
-        transition:0.4s all ease;
+
+    .btn, .lang-btn {
+        transition: 0.4s all ease;
     }
 
-    .btn:hover{
+    .btn:hover {
         transform: scale(1.1)
     }
 
@@ -619,21 +645,24 @@
                     @if ($langAndDefaultLang->lang_ar == true)
                         <a href="javascript:void(0)" data-code="ar" class="lang-change lang-btn"
                            style="color:black; border:2px solid grey; border-radius:10px; margin-inline-end:5px">
-                            <input class="form-check-input" type="radio" name="lang" id="arabicLang" {{App::getLocale() == 'ar'?"checked":""}}>
+                            <input class="form-check-input" type="radio" name="lang"
+                                   id="arabicLang" {{App::getLocale() == 'ar'?"checked":""}}>
                             <label for="arabicLang">العربية</label>
                         </a>
                     @endif
                     @if ($langAndDefaultLang->lang_en == true)
                         <a href="javascript:void(0)" data-code="en" class="lang-change lang-btn"
                            style="color:black; border:2px solid grey; border-radius:10px;; margin-inline-end:5px">
-                            <input  class="form-check-input" type="radio" name="lang" id="englishLang" {{App::getLocale() == 'en'?"checked":""}}>
+                            <input class="form-check-input" type="radio" name="lang"
+                                   id="englishLang" {{App::getLocale() == 'en'?"checked":""}}>
                             <label for="englishLang">English</label>
                         </a>
                     @endif
                     @if ($langAndDefaultLang->lang_nl == true)
                         <a href="javascript:void(0)" data-code="nl" class="lang-change lang-btn"
                            style="color:black; border:2px solid grey; border-radius:10px; margin-inline-end:5px">
-                            <input class="form-check-input" type="radio" name="lang" id="netherLang" {{App::getLocale() == 'nl'?"checked":""}}>
+                            <input class="form-check-input" type="radio" name="lang"
+                                   id="netherLang" {{App::getLocale() == 'nl'?"checked":""}}>
                             <label for="netherLang">Netherland</label>
                         </a>
                     @endif
@@ -662,66 +691,88 @@
                         </div>
                     @endif
                     @foreach($packages as $key => $package)
-                        <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="col-lg-4 col-md-6 col-sm-12"  style="{{$loop->iteration ==2?'padding-inline:2rem;':''}}">
                             <a href="{{route('start_package')}}" for="{{$package->id}}" class="package-card"
-                                   style=" color:black;position:relative;display: block;text-decoration:none;background-color:{{$package->color_background!= null?$package->color_background:'#0000ff30' }}; border:1px solid {{$package->color_border!= null?$package->color_border:'#b3b3b3'}}; width:100%; border-radius:5px; padding:1.5rem 4rem 1.5rem 1.5rem; {{$loop->iteration ==2?'transform:scale(1.1);':''}}">
-                                @if($package->{'badge_' . App::getLocale()} != null)
-                                    <span class="offer_badge" offer-content="{{$package->{'badge_' . App::getLocale()} }}">
+                               style=" color:black;position:relative;display: block;text-decoration:none;background-color:{{$package->color_background!= null?$package->color_background:'#0000ff30' }}; border:1px solid {{$package->color_border!= null?$package->color_border:'#b3b3b3'}}; width:100%; border-radius:5px; padding:1.5rem 4rem 1.5rem 1.5rem; {{$loop->iteration ==2?'transform:scale(1.1);':''}}">
+                                @if($package->type_view == 'photo' && $package->{'cove_desktop_' . App::getLocale()} != null )
+                                    <div class="package-wrapper">
+                                        <div
+                                            class="package-header d-flex align-items-center justify-content-between flex-wrap">
+                                            @if(!empty($package->{'cove_desktop_' . App::getLocale()}) && file_exists(public_path().'/'.$package->{'cove_desktop_' . App::getLocale()}) )
+                                                <img style="height:100px; width:200px;aspect-ratio:2/1;"
+                                                     src="{{ url($package->{'cove_desktop_' . App::getLocale()}) }}"
+                                                     alt="">
+                                            @else
+                                                <img style="height:100px; width:200px;aspect-ratio:2/1;"
+                                                     src="{{ url('front_them/assets/imgs/02.png') }}"
+                                                     alt="">
+                                            @endif
+                                        </div>
+                                    </div>
+                                @else
+                                    @if($package->{'badge_' . App::getLocale()} != null)
+                                        <span class="offer_badge"
+                                              offer-content="{{$package->{'badge_' . App::getLocale()} }}">
                                      <span class="offer_border"></span>
                                     </span>
-                                @endif
-                                <div class="package-wrapper">
-                                    <div class="package-header d-flex align-items-center justify-content-between flex-wrap">
-                                        @if(!empty($package->photo_desktop) && file_exists(public_path().'/'.$package->photo_desktop) )
-                                            <img style="height:100px; width:200px;aspect-ratio:2/1;" src="{{ url($package->photo_desktop) }}" alt="">
-                                        @else
-                                            <img style="height:100px; width:200px;aspect-ratio:2/1;"
-                                                 src="{{ url('front_them/assets/imgs/02.png') }}"
-                                                 alt="">
-                                        @endif
-                                        <span class="package-price"
-                                              style="font-size:30px; font-weight:900;">
-                                        @if ($package->offer)
-                                                <sub class="before" style="text-decoration: line-through;">{{ $package->price }}</sub>
-                                                <span>{{ $package->price - $package->offer->discount_amount }}</span>
+                                    @endif
+                                    <div class="package-wrapper">
+                                        <div
+                                            class="package-header d-flex align-items-center justify-content-between flex-wrap">
+                                            @if(!empty($package->photo_desktop) && file_exists(public_path().'/'.$package->photo_desktop) )
+                                                <img style="height:100px; width:200px;aspect-ratio:2/1;"
+                                                     src="{{ url($package->photo_desktop) }}" alt="">
                                             @else
-                                                {{ $package->price }}
+                                                <img style="height:100px; width:200px;aspect-ratio:2/1;"
+                                                     src="{{ url('front_them/assets/imgs/02.png') }}"
+                                                     alt="">
                                             @endif
+                                            <span class="package-price"
+                                                  style="font-size:30px; font-weight:900;">
+                                        @if ($package->offer)
+                                                    <sub class="before"
+                                                         style="text-decoration: line-through;">{{ $package->price }}</sub>
+                                                    <span>{{ $package->price - $package->offer->discount_amount }}</span>
+                                                @else
+                                                    {{ $package->price }}
+                                                @endif
                                           €
                                     </span>
-                                    </div>
-                                    <div class="package-select">
-                                        @if(Auth()->check())
-                                            @if ($package->offer)
-                                                <input class="form-check-input" type="radio" id="{{$package->id}}"
-                                                       name="id"
-                                                       value="{{$package->offer->id}}" {{in_array($package->id,$subsc)?"checked":""}}>
-                                                <input type="hidden" name="package_offer" value="offer">
+                                        </div>
+                                        <div class="package-select">
+                                            @if(Auth()->check())
+                                                @if ($package->offer)
+                                                    <input class="form-check-input" type="radio" id="{{$package->id}}"
+                                                           name="id"
+                                                           value="{{$package->offer->id}}" {{in_array($package->id,$subsc)?"checked":""}}>
+                                                    <input type="hidden" name="package_offer" value="offer">
+                                                @else
+                                                    <input class="form-check-input" type="radio" id="{{$package->id}}"
+                                                           name="id"
+                                                           value="{{$package->id}}" {{in_array($package->id,$subsc)?"checked":""}}>
+                                                    <input type="hidden" name="package_offer" value="package">
+                                                @endif
                                             @else
                                                 <input class="form-check-input" type="radio" id="{{$package->id}}"
                                                        name="id"
-                                                       value="{{$package->id}}" {{in_array($package->id,$subsc)?"checked":""}}>
+                                                       value="{{$package->id}}">
                                                 <input type="hidden" name="package_offer" value="package">
+
                                             @endif
-                                        @else
-                                            <input class="form-check-input" type="radio" id="{{$package->id}}"
-                                                   name="id"
-                                                   value="{{$package->id}}">
-                                            <input type="hidden" name="package_offer" value="package">
 
-                                        @endif
+                                            <span
+                                                style="font-size:22px; font-weight:700">{{ $package->{'name_' . App::getLocale()} }}</span>
+                                            <input type="hidden" name="_token" value="{{csrf_token()}}">
 
-                                        <span
-                                            style="font-size:22px; font-weight:700">{{ $package->{'name_' . App::getLocale()} }}</span>
-                                        <input type="hidden" name="_token" value="{{csrf_token()}}">
-
+                                        </div>
+                                        <div class="package-options">
+                                            <ul style="list-style-type:none" class="">
+                                                {!! $package->{'notes_' . App::getLocale()} !!}
+                                            </ul>
+                                        </div>
                                     </div>
-                                    <div class="package-options">
-                                        <ul style="list-style-type:none" class="">
-                                            {!! $package->{'notes_' . App::getLocale()} !!}
-                                        </ul>
-                                    </div>
-                                </div>
+                                @endif
+
                             </a>
                         </div>
                     @endforeach
@@ -744,7 +795,8 @@
                     @if ($langAndDefaultLang->lang_ar == true)
                         <a href="javascript:void(0)" data-code="ar" class="lang-change lang-btn"
                            style="color:black; border:2px solid grey; border-radius:10px; margin-inline-end:5px">
-                            <input type="radio" class="form-check-input" name="lang1" id="arabicLang1" {{App::getLocale() == 'ar'?"checked":""}}>
+                            <input type="radio" class="form-check-input" name="lang1"
+                                   id="arabicLang1" {{App::getLocale() == 'ar'?"checked":""}}>
                             <label for="arabicLang1">العربية</label>
                         </a>
                     @endif
@@ -759,7 +811,8 @@
                     @if ($langAndDefaultLang->lang_nl == true)
                         <a href="javascript:void(0)" data-code="nl" class="lang-change lang-btn"
                            style="color:black; border:2px solid grey; border-radius:10px; margin-inline-end:5px">
-                            <input type="radio" class="form-check-input" name="lang1" id="netherLang1" {{App::getLocale() == 'nl'?"checked":""}}>
+                            <input type="radio" class="form-check-input" name="lang1"
+                                   id="netherLang1" {{App::getLocale() == 'nl'?"checked":""}}>
                             <label for="netherLang1">Netherland</label>
                         </a>
                     @endif
@@ -768,35 +821,54 @@
         </div>
         <div class="col-12 text-center mb-5">
 
-                <a href="{{route('start_package')}}"
-                        class="btn"
-                        style="background:#01b701; border-radius:20px; padding:0.5rem 7rem; color:white">{{ trans('messages.Start Exam') }}
-                </a>
+            <a href="{{route('start_package')}}"
+               class="btn"
+               style="background:#01b701; border-radius:20px; padding:0.5rem 7rem; color:white">{{ trans('messages.Start Exam') }}
+            </a>
 
         </div>
         <div class="col-12 mb-5">
-                <form id="MobilePackages" name="MobilePackages" method="post"
-                      action="{{route('purchasePackage')}}">
-                    <div class="row">
-                        @if (session('error'))
-                            <div class="alert alert-danger" style="margin-bottom: 3em">
-                                {{ session('error') }}
-                            </div>
-                        @endif
+            <form id="MobilePackages" name="MobilePackages" method="post"
+                  action="{{route('purchasePackage')}}">
+                <div class="row">
+                    @if (session('error'))
+                        <div class="alert alert-danger" style="margin-bottom: 3em">
+                            {{ session('error') }}
+                        </div>
+                    @endif
 
-                        @if (session('success'))
-                            <div class="alert alert-success">
-                                {{ session('success') }}
-                            </div>
-                        @endif
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                     @foreach($packages as $key => $package)
                         <div class="{{$loop->iteration ==1?'col-12':'col-6'}} ">
                             @if($loop->iteration ==1)
                                 <div class="row justify-content-center">
                                     <div class="col-10 mb-4" style="padding-inline:2rem">
                                         @endif
-                                        <a href="{{route('start_package')}}" for="mob_{{$package->id}}" class="package-card"
-                                               style="color:black;display: block;text-decoration:none;position:relative;background-color:{{$package->color_background!= null?$package->color_background:'#0000ff30' }}; border:1px solid {{$package->color_border!= null?$package->color_border:'#b3b3b3'}}; width:100%; border-radius:5px; padding:1rem; {{$loop->iteration ==1?'transform:scale(1.1);':''}}">
+                                        <a href="{{route('start_package')}}" for="mob_{{$package->id}}"
+                                           class="package-card"
+                                           style="color:black;display: block;text-decoration:none;position:relative;background-color:{{$package->color_background!= null?$package->color_background:'#0000ff30' }}; border:1px solid {{$package->color_border!= null?$package->color_border:'#b3b3b3'}}; width:100%; border-radius:5px; padding:1rem; {{$loop->iteration ==1?'transform:scale(1.1);':''}}">
+
+                                            @if($package->type_view == 'photo' && $package->{'cove_phone_' . App::getLocale()} != null )
+                                                <div class="package-wrapper">
+                                                    <div class="package-header d-flex align-items-center justify-content-between">
+                                                        @if(!empty($package->{'cove_phone_' . App::getLocale()}) && file_exists(public_path().'/'.$package->{'cove_phone_' . App::getLocale()}) )
+                                                            <img
+                                                                style="height:100px;width:120px;aspect-ratio:1/1; margin-inline-start:1rem"
+                                                                src="{{ url($package->{'cove_phone_' . App::getLocale()}) }}"
+                                                                alt="">
+                                                        @else
+                                                            <img
+                                                                style="height:100px; width:120px;aspect-ratio:1/1; margin-inline-start:1rem"
+                                                                src="{{ url('front_them/assets/imgs/02.png') }}"
+                                                                alt="">
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                            @else
 
                                             @if($package->{'badge_' . App::getLocale()} != null)
                                                 <div class="ribbon ribbon-top-right">
@@ -805,7 +877,7 @@
                                             @endif
 
                                             <div class="package-wrapper">
-                                                <div  class="package-header d-flex align-items-center justify-content-between">
+                                                <div class="package-header d-flex align-items-center justify-content-between">
                                                     @if(!empty($package->photo_phone) && file_exists(public_path().'/'.$package->photo_phone) )
                                                         <img
                                                             style="height:100px;width:120px;aspect-ratio:1/1; margin-inline-start:1rem"
@@ -822,7 +894,8 @@
 
                                         @if ($package->offer)
                                                             <sub
-                                                                class="before" style="text-decoration: line-through;">{{ $package->price }}</sub>
+                                                                class="before"
+                                                                style="text-decoration: line-through;">{{ $package->price }}</sub>
                                                             <span>{{ $package->price - $package->offer->discount_amount }}</span>
                                                         @else
                                                             {{ $package->price }}
@@ -833,25 +906,28 @@
                                                 <div class="package-select">
                                                     @if(Auth()->check())
                                                         @if ($package->offer)
-                                                            <input class="form-check-input" type="radio" id="mob_{{$package->id}}"
+                                                            <input class="form-check-input" type="radio"
+                                                                   id="mob_{{$package->id}}"
                                                                    name="id"
                                                                    value="{{$package->offer->id}}" {{in_array($package->id,$subsc)?"checked":""}}>
                                                             <input type="hidden" name="package_offer" value="offer">
                                                         @else
-                                                            <input class="form-check-input" type="radio" id="mob_{{$package->id}}"
+                                                            <input class="form-check-input" type="radio"
+                                                                   id="mob_{{$package->id}}"
                                                                    name="id"
                                                                    value="{{$package->id}}" {{in_array($package->id,$subsc)?"checked":""}}>
                                                             <input type="hidden" name="package_offer" value="package">
                                                         @endif
                                                     @else
-                                                        <input class="form-check-input" type="radio" id="mob_{{$package->id}}"
+                                                        <input class="form-check-input" type="radio"
+                                                               id="mob_{{$package->id}}"
                                                                name="id"
-                                                               value="{{$package->id}}" >
+                                                               value="{{$package->id}}">
                                                         <input type="hidden" name="package_offer" value="package">
                                                     @endif
                                                     <span
                                                         style="font-size:18px; font-weight:700;">{{ $package->{'name_' . App::getLocale()} }}</span>
-                                                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                                    <input type="hidden" name="_token" value="{{csrf_token()}}">
                                                 </div>
                                                 <div class="package-options">
                                                     <ul style="list-style-type:none" class="">
@@ -859,7 +935,7 @@
                                                     </ul>
                                                 </div>
                                             </div>
-
+                                            @endif
                                         </a>
 
                                         @if($loop->iteration ==1)
@@ -869,8 +945,8 @@
 
                         </div>
                     @endforeach
-                    </div>
-                </form>
+                </div>
+            </form>
 
         </div>
 

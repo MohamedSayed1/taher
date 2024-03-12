@@ -3,6 +3,12 @@
     {{ trans('messages.Adnan Eltaher') . ' | ' . $theoryPackage->{'name_' . App::getLocale()} }}
 @stop
 @section('content')
+    <style>
+        .ms-dd {
+            width:100%;
+            background: #fff;
+        }
+    </style>
     <section class="container-fluid article-page-wrapper">
         <div class="container">
             <div class="row article-wrapper mt-3 mb-5 ">
@@ -77,13 +83,21 @@
                             <div
                                 class="article-input d-flex flex-wrap justify-content-center align-items-center my-3 ">
 
-
+                                @php
+                                    $methods= \Mollie\Laravel\Facades\Mollie::api()->methods->allActive();
+                                @endphp
                                 <div class="w-100 m-5">
-                                    <label for="">{{ trans('messages.Name') }}</label>
-                                    <input class="form-control" type="text" name="name"
-                                           id="name"
-                                           placeholder="{{ trans('messages.Name') }}"
-                                           value="" required>
+                                    <div class="control-wrapper mb-3">
+                                        <label for="payment">{{ trans('messages.payment') }}</label>
+                                        <select class="tech" name="payment" is="ms-dropdown" required>
+                                            @foreach($methods as $method)
+                                                <option data-image="{{ $method->image->svg }}" value="{{ $method->id }}">{{ $method->description  }}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('payment')
+                                        <small class="error text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
                                     <label for="">{{ trans('messages.Email') }}</label>
                                     <input class="form-control" type="email" name="email"
                                            id="email"
