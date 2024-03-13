@@ -2,6 +2,7 @@
 @section('meta_title'){{ trans('messages.Adnan Eltaher') . ' | ' . trans('messages.Packages & Offers') }}@stop
 @section('content')
     @php
+        // test //
         $header_data = App\Models\Setting::select('test_exam_id', 'home_title_' . App::getLocale() . ' as home_title', 'home_description_' . App::getLocale() . ' as home_description')->find(1);
     @endphp
 
