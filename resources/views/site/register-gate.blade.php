@@ -3,11 +3,10 @@
     {{ trans('messages.Adnan Eltaher') . ' | ' . trans('messages.Home') }}
 @stop
 @section('content')
-
     <div class="register-gate my-5" style="overflow:hidden">
         <div class="row justify-content-center">
             <div class="col-xxl-6 col-md-10">
-                <div class="row gx-5 mb-4 align-items-stretch">
+                <div class="row gx-2 mb-4 align-items-stretch px-3">
                     <div class="col-6">
                         <a class="login-txt d-inline-block w-100 btn bg-danger text-white" href="{{route('login')}}"
                              style="background-color:#1ba9ff40; border:1px solid #1ba9ff; border-radius:10px; padding:1rem; font-weight:700; font-size:20px">

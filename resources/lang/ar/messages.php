@@ -329,7 +329,7 @@ return [
     'The meaning of the symbols' => 'معنى الرموز',
     'Information about the theory test' => 'معلومات عن اختبار القيادة النظري',
     'Back to the tests' => 'العودة للإختبارات',
-    'Start Exam' => 'بدأ الأمتحان',
+    'Start Exam' => 'بدء الأمتحان',
     'test exam' => 'أمتحان تجريبي',
     'test' => 'تجريبي',
     'Exam Info' => 'معلومات الأمتحان',

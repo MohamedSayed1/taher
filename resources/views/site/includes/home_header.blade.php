@@ -672,7 +672,7 @@
         <div class="col-12 text-center mb-5">
             <a href="{{route('start_package')}}"
                class="btn"
-               style="background:#01b701; border-radius:20px; padding:0.5rem 7rem; color:white; font-size:20px">{{ trans('messages.Start Exam') }}
+               style="background:#01b701; border-radius:20px; padding:0.5rem 7rem; color:white; font-size:20px; font-weight:bold">{{ trans('messages.Start Exam') }}
             </a>
         </div>
         <div class="col-12 mb-5">
@@ -829,11 +829,11 @@
 
             <a href="{{route('start_package')}}"
                class="btn"
-               style="background:#01b701; border-radius:20px; padding:0.5rem 7rem; color:white">{{ trans('messages.Start Exam') }}
+               style="background:#01b701; border-radius:20px; padding:0.5rem 7rem; color:white; font-weight:bold">{{ trans('messages.Start Exam') }}
             </a>
 
         </div>
-        <div class="col-12 mb-5">
+        <div class="col-12 mb-2">
             <form id="MobilePackages" name="MobilePackages" method="post"
                   action="{{route('purchasePackage')}}">
                 <div class="row">
@@ -849,10 +849,10 @@
                         </div>
                     @endif
                     @foreach($packages as $key => $package)
-                        <div class="{{$loop->iteration ==1?'col-12':'col-6'}} ">
+                        <div class="{{$loop->iteration ==1?'col-12':'col-6'}} " style="padding:0">
                             @if($loop->iteration ==1)
                                 <div class="row justify-content-center">
-                                    <div class="col-10 mb-4" style="padding-inline:2rem">
+                                    <div class="col-10 mb-4">
                                         @endif
                                         @if($package->type_view == 'photo' && $package->{'cove_phone_' . App::getLocale()} != null )
                                         <a href="{{route('start_package')}}" for="mob_{{$package->id}}"
@@ -964,7 +964,7 @@
 
         </div>
 
-        <div class="col-12 text-center">
+        <div class="col-12 text-center mb-3">
             <a href="{{ route('examInfo', $header_data->test_exam_id) }}"
                class="btn"
                style="background:#1ba9ff; border-radius:20px; padding:0.5rem 7rem; color:white; white-space:nowrap">{{ trans('messages.Free demo test') }}

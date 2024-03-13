@@ -8,7 +8,7 @@
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa-solid fa-bars"></i>
         </button> -->
-        <div class="d-flex align-tems-center justify-content-between w-100" id="navbarSupportedContent">
+        <div class="nav-actions d-flex align-tems-center justify-content-between w-100" id="navbarSupportedContent">
             <ul class="nav d-flex flex-nowrap col-lg-auto ms-lg-auto mb-2 justify-content-center mb-md-0">
                 <!--li><a href="{{ route('home') }}"
                         class="nav-link {{ Route::currentRouteName() == 'home' ? 'active' : '' }}  px-3 pb-0 link-dark">{{ trans('messages.Home') }}</a>
@@ -80,13 +80,17 @@
     </nav>
 </div>
 @else
-<nav class="pc-navbar">
+<nav class="pc-navbar not-home">
     <div class="container-fluid d-flex align-items-center justify-content-between">
         <a href="{{ route('home') }}" class="logo">
             <img src="{{ url('front_them/assets/imgs/small-logo.png') }}" alt="">
         </a>
-        <div class="adnan-txt text-center" style="color:#1ba9ff; font-size:30px; font-weight:700;">
+        <div class="adnan-txt-desktop text-center" style="color:#1ba9ff; font-size:30px; font-weight:700;">
             <span class="d-block">عدنان الطاهر - Adnaan Altaher</span>
+        </div>
+        <div class="adnan-txt-mobile text-center d-none " style="color:#1ba9ff; font-size:20px; font-weight:700;">
+            <span class="d-block w-100">عدنان الطاهر</span>
+            <span class="d-block w-100">Adnaan Altaher</span>
         </div>
         <a href="{{ url()->previous() }}" class="back text-center d-block" style="cursor:pointer;text-decoration:none">
             <img src="{{ url('front_them/assets/imgs/back-arrow.png') }}" alt="" style="width:70px; height:70px">
