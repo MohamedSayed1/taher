@@ -12,7 +12,7 @@
             <div class="row theory-package-cards mt-5 mb-5 justify-content-center">
                 @forelse ($theory_packages as $thpackage)
                     @if($thpackage->type_view != 'photo')
-                        <div class="col-lg-3 col-md-3 col-sm-12 wrapper">
+                        <div class="col-lg-4 col-md-3 col-sm-12 wrapper">
                             <div class="theory-package-card card"
                                  style="border: 1px solid {{$thpackage->color_border !=null?$thpackage->color_border:"transparent" }} ;background:{{$thpackage->color_background !=null?$thpackage->color_background:"transparent" }} ;">
                                 <a style="text-decoration:none"
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                     @else
-                        <div class="col-lg-3 col-md-3 col-sm-12 wrapper">
+                        <div class="col-lg-4 col-md-3 col-sm-12 wrapper">
                             <div class="theory-package-card card" style="padding:0; border:none ">
                                 <a style="text-decoration:none"
                                    href="{{ route('viewTheoryPackage', $thpackage->id) }}">
@@ -54,12 +54,12 @@
                                         <div class="col-md-12 col-12">
                                             <div class="theory-package-img-wrapper">
                                                 @if ($thpackage->{'cove_desktop_' . App::getLocale()})
-                                                    <img class="course-img-desktop" style="height: 100%"
+                                                    <img class="course-img-desktop" style="height: auto;  object-fit: contain;aspect-ratio: 16 / 9; width: 100%;"
                                                          src="{{ asset($thpackage->{'cove_desktop_' . App::getLocale()}) }}"
                                                          alt="">
                                                 @endif
                                                 @if ($thpackage->{'cove_phone_' . App::getLocale()})
-                                                    <img class="course-img-mobile d-none" style="height: 100%"
+                                                    <img class="course-img-mobile d-none" style="height: 170px; object-fit: contain;aspect-ratio: 16 / 9; width: auto;"
                                                          src="{{ asset($thpackage->{'cove_phone_' . App::getLocale()}) }}"
                                                          alt="">
 
