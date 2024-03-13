@@ -695,7 +695,7 @@
                         @if($package->type_view == 'photo' && $package->{'cove_desktop_' . App::getLocale()} != null )
                             <a href="{{route('start_package')}}" for="{{$package->id}}" class="package-card"
                                style=" color:black;position:relative;display: block;text-decoration:none; width:100%; {{$loop->iteration ==2?'transform:scale(1.1);':''}}">
-                               
+
                                     <div class="package-wrapper">
                                         <div
                                             class="package-header d-flex align-items-center justify-content-between flex-wrap">
@@ -714,7 +714,7 @@
                                 @else
                                 <a href="{{route('start_package')}}" for="{{$package->id}}" class="package-card"
                                style=" color:black;position:relative;display: block;text-decoration:none;background-color:{{$package->color_background!= null?$package->color_background:'#0000ff30' }}; border:1px solid {{$package->color_border!= null?$package->color_border:'#b3b3b3'}}; width:100%; border-radius:5px; padding:1.5rem 4rem 1.5rem 1.5rem; {{$loop->iteration ==2?'transform:scale(1.1);':''}}">
-                               
+
                                     @if($package->{'badge_' . App::getLocale()} != null)
                                         <span class="offer_badge"
                                               offer-content="{{$package->{'badge_' . App::getLocale()} }}">
@@ -779,7 +779,7 @@
                                     </a>
                                 @endif
 
-                           
+
                         </div>
                     @endforeach
                 </div>
@@ -793,7 +793,7 @@
         </div>
     </div>
 </div>
-<div class="container-fluid header-section mobile d-none">
+<div class="container-fluid header-section mobile d-none mt-5">
     <div class="row justify-content-center mx-2" style="border:3px solid #c9c9c9; border-radius:20px">
         <div class="col-12 text-center mb-5">
             @if ($moreThanOneLang > 1)
@@ -859,7 +859,7 @@
                                            class="package-card"
                                            style="color:black;display: block;text-decoration:none;position:relative; width:100%; border-radius:5px; {{$loop->iteration ==1?'transform:scale(1.1);':''}}">
 
-                                            
+
                                                 <div class="package-wrapper">
                                                     <div class="package-header d-flex align-items-center justify-content-between">
                                                         @if(!empty($package->{'cove_phone_' . App::getLocale()}) && file_exists(public_path().'/'.$package->{'cove_phone_' . App::getLocale()}) )
@@ -886,7 +886,7 @@
                                                 <div class="ribbon ribbon-top-right">
                                                     <span>{{$package->{'badge_' . App::getLocale()} }}</span>
                                                 </div>
-                                        
+
                                             @endif
 
                                             <div class="package-wrapper">
@@ -950,7 +950,7 @@
                                             </div>
                                             </a>
                                             @endif
-                                        
+
 
                                         @if($loop->iteration ==1)
                                     </div>
