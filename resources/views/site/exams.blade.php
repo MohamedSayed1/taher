@@ -86,7 +86,7 @@
                             @if ($langAndDefaultLang->lang_nl == true)
                                 <a href="javascript:void(0)" data-code="nl" class="lang-change lang-btn" style="color:black; border:2px solid grey; border-radius:10px; margin-inline-end:5px">
                                     <input class="form-check-input" type="radio" name="lang" id="netherLang" {{App::getLocale() == 'nl'?"checked":""}}>
-                                    <label for="netherLang">Netherland</label>
+                                    <label for="netherLang">Nederlands</label>
                                 </a>
                             @endif
                         </div>

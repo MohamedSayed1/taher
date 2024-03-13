@@ -663,7 +663,7 @@
                            style="color:black; border:2px solid grey; border-radius:10px; margin-inline-end:5px">
                             <input class="form-check-input" type="radio" name="lang"
                                    id="netherLang" {{App::getLocale() == 'nl'?"checked":""}}>
-                            <label for="netherLang">Netherland</label>
+                            <label for="netherLang">Nederlands</label>
                         </a>
                     @endif
                 </div>
@@ -819,7 +819,7 @@
                            style="color:black; border:2px solid grey; border-radius:10px; margin-inline-end:5px">
                             <input type="radio" class="form-check-input" name="lang1"
                                    id="netherLang1" {{App::getLocale() == 'nl'?"checked":""}}>
-                            <label for="netherLang1">Netherland</label>
+                            <label for="netherLang1">Nederlands</label>
                         </a>
                     @endif
                 </div>
