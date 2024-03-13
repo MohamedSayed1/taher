@@ -242,7 +242,7 @@
                             <label for="arrangement">{{ trans('messages.Arrangement') }}
                             </label>
                             <div>
-                                {!! Form::number('arrangement', 0, [
+                                {!! Form::number('arrangement', $package->arrangement, [
                                     'class' => 'form-control',
                                     'placeholder' => trans('messages.Expiration duration'),
                                 ]) !!}

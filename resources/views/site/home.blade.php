@@ -11,14 +11,13 @@
             </div>
             <div class="row theory-package-cards mt-5 mb-5 justify-content-center">
                 @forelse ($theory_packages as $thpackage)
-                    <div class="col-lg-3 col-md-3 col-sm-12 wrapper">
-                        <div class="theory-package-card card"
-                             style="border: 1px solid {{$thpackage->color_border !=null?$thpackage->color_border:"transparent" }} ;background:{{$thpackage->color_background !=null?$thpackage->color_background:"transparent" }} ;">
-                            <a style="text-decoration:none" href="{{ route('viewTheoryPackage', $thpackage->id) }}"
-                            >
-                                <div class="row">
-                                    @if($thpackage->type_view != 'photo')
-
+                    @if($thpackage->type_view != 'photo')
+                        <div class="col-lg-3 col-md-3 col-sm-12 wrapper">
+                            <div class="theory-package-card card"
+                                 style="border: 1px solid {{$thpackage->color_border !=null?$thpackage->color_border:"transparent" }} ;background:{{$thpackage->color_background !=null?$thpackage->color_background:"transparent" }} ;">
+                                <a style="text-decoration:none"
+                                   href="{{ route('viewTheoryPackage', $thpackage->id) }}">
+                                    <div class="row">
                                         <div class="col-md-12 col-4">
                                             <div class="theory-package-img-wrapper">
                                                 @if ($thpackage->image)
@@ -31,10 +30,6 @@
                                                          alt="">
 
                                                 @endif
-                                                {{-- <img src="{{ url($thpackage->image) }}" alt=""> --}}
-                                                <!--    <div class="date">
-                                        <span> {{ $thpackage->price }} € </span>
-                                    </div> -->
                                             </div>
                                         </div>
                                         <div class="col-md-12 col-6">
@@ -45,56 +40,38 @@
                                                 </p>
                                             </div>
                                         </div>
-                                    @else
-                                        <div class="col-md-12 col-4">
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+                    @else
+                        <div class="col-lg-3 col-md-3 col-sm-12 wrapper">
+                            <div class="theory-package-card card" style="padding:0; border:none ">
+                                <a style="text-decoration:none"
+                                   href="{{ route('viewTheoryPackage', $thpackage->id) }}">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-12 col-12">
                                             <div class="theory-package-img-wrapper">
                                                 @if ($thpackage->{'cove_desktop_' . App::getLocale()})
-                                                    <img class="course-img-desktop" src="{{ asset($thpackage->{'cove_desktop_' . App::getLocale()}) }}"
+                                                    <img class="course-img-desktop" style="height: 100%"
+                                                         src="{{ asset($thpackage->{'cove_desktop_' . App::getLocale()}) }}"
                                                          alt="">
                                                 @endif
                                                 @if ($thpackage->{'cove_phone_' . App::getLocale()})
-                                                    <img class="course-img-mobile d-none"
+                                                    <img class="course-img-mobile d-none" style="height: 100%"
                                                          src="{{ asset($thpackage->{'cove_phone_' . App::getLocale()}) }}"
                                                          alt="">
 
                                                 @endif
-                                                {{-- <img src="{{ url($thpackage->image) }}" alt=""> --}}
-                                                <!--    <div class="date">
-                                        <span> {{ $thpackage->price }} € </span>
-                                    </div> -->
                                             </div>
                                         </div>
-                                    @endif
-
-                                </div>
-                                <!--    <div class="theory-button-sub d-flex justify-content-between">
-                                    <a href="{{ route('viewTheoryPackage', $thpackage->id) }}"
-                                       class="btn right-button">
-                                        <span>{{ trans('messages.Read more') }}</span>
-                                        @if (App::getLocale() == 'ar')
-                                    <i class="fa-solid fa-angles-left"></i>
-
-                                @else
-                                    <i class="fa-solid fa-angles-right"></i>
-
-                                @endif
+                                    </div>
                                 </a>
                             </div>
--->
-                                <!--  <div class="theory-button-left">
-
-                                    <a onclick="subscribTheoryPackage({{ $thpackage->id }})"
-                                       data-bs-toggle="modal"
-                                       data-bs-target="#subscrib-theory-modal" class="btn left-button">
-                                        <span>{{ trans('messages.buyNow') }}</span>
-                                    </a>
-
-
-                                </div> -->
-
-                            </a>
                         </div>
-                    </div>
+                    @endif
+
                 @empty
                 @endforelse
             </div>
