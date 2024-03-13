@@ -495,7 +495,7 @@
                     alert("This browser does not support FileReader.");
                 }
             } else {
-                alert("Please upload a valid image file.");
+
             }
         });
 
@@ -515,7 +515,7 @@
                     alert("This browser does not support FileReader.");
                 }
             } else {
-                alert("Please upload a valid image file.");
+
             }
         });
         $(".cove_desktop_en_2").change(function () {
@@ -534,7 +534,7 @@
                     alert("This browser does not support FileReader.");
                 }
             } else {
-                alert("Please upload a valid image file.");
+
             }
         });
         $(".cove_phone_en_2").change(function () {
@@ -553,7 +553,7 @@
                     alert("This browser does not support FileReader.");
                 }
             } else {
-                alert("Please upload a valid image file.");
+
             }
         });
         $(".cove_phone_nl_2").change(function () {
@@ -572,7 +572,7 @@
                     alert("This browser does not support FileReader.");
                 }
             } else {
-                alert("Please upload a valid image file.");
+
             }
         });
         $(".cove_desktop_nl_2").change(function () {
@@ -608,7 +608,7 @@
                     alert("This browser does not support FileReader.");
                 }
             } else {
-                alert("Please upload a valid image file.");
+
             }
         });
     </script>

@@ -89,8 +89,8 @@ display: none !important;
                         class="fa-brands fa-facebook-f"></i></a>
                 <a href="{{ $footer_data->youyube }}" class="social-link" target="blank"><i
                         class="fa-brands fa-youtube"></i></a>
-                <a href="{{ 'https://www.google.com/maps/@' . $footer_data->lat . ',' . $footer_data->lon . ',15z' }}"
-                    class="social-link" target="blank"><i class="fa-solid fa-location-dot"></i></a>
+                <!--a href="{{ 'https://www.google.com/maps/@' . $footer_data->lat . ',' . $footer_data->lon . ',15z' }}"
+                    class="social-link" target="blank"><i class="fa-solid fa-location-dot"></i></a-->
                 <a href="{{ $footer_data->whatsapp }}" class="social-link" target="blank"><i
                         class="fa-brands fa-whatsapp"></i></a>
             </div>
