@@ -480,6 +480,10 @@ return [
     "cove_phone_en" => "صوره للمويبل الانجليزية",
     "cove_phone_nl" => "صوره للمويبل الهولاندية",
     "payment" => "اختار طريقه الدفع",
+    "arrangement_phone"=>"الترتيب للموبيل",
+    "Arrangement"=>"الترتيب ",
+
+
 
 
 ];

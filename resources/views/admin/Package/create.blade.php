@@ -227,6 +227,21 @@
                             </div>
                             @enderror
                         </div>
+                        <div class="form-group">
+                            <label for="arrangement_phone">{{ trans('messages.arrangement_phone') }}
+                            </label>
+                            <div>
+                                {!! Form::number('arrangement_phone', 0, [
+                                    'class' => 'form-control',
+                                    'placeholder' => trans('messages.arrangement_phone'),
+                                ]) !!}
+                            </div>
+                            @error('arrangement_phone')
+                            <div class="badge badge-danger text-center" style="width: 100%">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
                         <div class="row">
                             <div class="form-group">
                                 <div class="col-lg-12 mx-auto">

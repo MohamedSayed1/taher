@@ -148,7 +148,17 @@
             <button id="mark-question-flag" class="btn icon-btn hide-after-exam"
                     onclick="markCurrentQuestionAsFlaged()">
                 <i class="fa-solid fa-flag" style="color:#1ba9ff !important; font-size:40px"></i></button>
-
+            @if ($user_id == 0)
+                <button class="btn icon-btn show-after-exam" style="display: none"
+                        onclick="getFinishedExamResultGuest({{ $exam_id }})">
+                    <i class="fa-solid fa-grip" style="color:#1ba9ff; font-size:40px"></i>
+                </button>
+            @else
+                <button class="btn icon-btn show-after-exam" style="display: none"
+                        onclick="getFinishedExamResultUser({{ $exam_id }},{{ $user_id }})">
+                    <i class="fa-solid fa-grip" style="color:#1ba9ff; font-size:40px"></i>
+                </button>
+            @endif
         </nav>
     </div>
     <section class="container-fluid test-page-wrapper">

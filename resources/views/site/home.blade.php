@@ -4,7 +4,7 @@
 @stop
 @section('content')
     <section class="container-fluid theory-package-section mt-5">
-        <div class="container" style="border:3px solid #c9c9c9; border-radius:20px">
+        <div class="container" style="{{count($theory_packages) == 1?'padding-bottom: 3rem;':'' }} border:3px solid #c9c9c9; border-radius:20px">
             <br>
             <div class="youtube-videos-title d-flex justify-content-center">
                 <h2>{{ trans('messages.Theory Packages') }}</h2>

@@ -848,6 +848,11 @@
                             {{ session('success') }}
                         </div>
                     @endif
+                        @php
+
+                            $packages = $packages->sortBy('arrangement_phone')->all();
+
+                       @endphp
                     @foreach($packages as $key => $package)
                         <div class="{{$loop->iteration ==1?'col-12':'col-6'}} " style="padding:0">
                             @if($loop->iteration ==1)

@@ -227,7 +227,7 @@ class ClientController extends Controller
                     "email" => $email,
                     "subid" => isset($idSub)?$idSub:0,
                     "user_id" => Auth::check() ? Auth::user()->id : 0,
-                    "user_name" => Auth::check() ? Auth::user()->name : $name,
+                    "user_name" => $name,
                     "user_type" => Auth::check() ? 'user' : 'guest',
                     "lang" => App::getLocale(),
                 ],

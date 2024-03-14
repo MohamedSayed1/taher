@@ -480,6 +480,8 @@ return [
     "cove_phone_en" => "Afbeelding van Engelse mobiel",
     "cove_phone_nl" => "Afbeelding van Nederlands mobiel",
     "payment" => "Kies een betaalmethode",
+    "arrangement_phone"=>"Regeling voor de mobiele",
+    "Arrangement"=>"Regeling ",
 
 
 ];

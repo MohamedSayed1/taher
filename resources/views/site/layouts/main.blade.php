@@ -54,17 +54,6 @@
 
         });
 
-        @if (session()->has('notif'))
-        $.toast({
-            heading: `{{ trans('messages.Notification') }}`,
-            text: `{{ session()->get('notif') }}`,
-            position: 'top-right',
-            loaderBg: '#ff6849',
-            icon: 'success',
-            hideAfter: 3000,
-            stack: 6
-        });
-        @endif
     </script>
 </body>
 </html>

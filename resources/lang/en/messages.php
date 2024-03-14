@@ -479,5 +479,7 @@ return [
     "cove_phone_en" => "English Mobile Image",
     "cove_phone_nl" => "Dutch Mobile Image",
     "payment" => "Choose a payment method",
+    "arrangement_phone"=>"Arrangement for phone",
+    "Arrangement"=>"Arrangement ",
 
 ];

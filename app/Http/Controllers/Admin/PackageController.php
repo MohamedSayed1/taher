@@ -93,6 +93,7 @@ class PackageController extends Controller
             $namePhone = saveFile($request->file('cove_desktop_ar'), 'package');
             $package->cove_desktop_ar = $namePhone;
         }
+        $package->arrangement_phone = $request->arrangement_phone;
         $package->type_view = $request->type_view;
         $package->name_ar = $request->name_ar;
         $package->name_en = $request->name_en;
@@ -190,7 +191,7 @@ class PackageController extends Controller
             $namePhone = saveFile($request->file('cove_desktop_ar'), 'package');
             $package->cove_desktop_ar = $namePhone;
         }
-
+        $package->arrangement_phone = $request->arrangement_phone;
         $package->type_view = $request->type_view;
         $package->name_ar = $request->name_ar;
         $package->name_en = $request->name_en;
