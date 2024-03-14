@@ -65,40 +65,39 @@ class ClientController extends Controller
     {
 
 
-        if(Auth()->check())
-        {
+        if (Auth()->check()) {
             $if_subscribed = Subscription::where(['user_id' => auth()->user()->id])->whereDate('expiration_date', '>', now())->first();
             if ($if_subscribed != null) {
                 return redirect()->route('exams');
-            }else{
-                $packeds = Package::where('active',1)->get();
-                $methods= Mollie::api()->methods->allActive();
-                return  view('site.getpayment')
-                    ->with('packeds',$packeds)
-                    ->with('methods',$methods);
+            } else {
+                $packeds = Package::where('active', 1)->get();
+                $methods = Mollie::api()->methods->allActive();
+                return view('site.getpayment')
+                    ->with('packeds', $packeds)
+                    ->with('methods', $methods);
             }
-        }else{
+        } else {
             $youtube = Setting::first()->login_youtube;
             if ($youtube != null) {
                 $regExp = '/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/';
                 $match = preg_match($regExp, $youtube, $matches);
                 $video_id = ($match && strlen($matches[7]) == 11) ? $matches[7] : 'not_valid';
             }
-            $youtubeId = isset($video_id)?$video_id:null;
-            return  view('site.register-gate')
-                ->with('youtubeId',$youtubeId);
+            $youtubeId = isset($video_id) ? $video_id : null;
+            return view('site.register-gate')
+                ->with('youtubeId', $youtubeId);
         }
 
     }
+
     public function purchasePackage(Request $request)
     {
         $data = $request->all();
         $rules = [
             'package' => 'required'
         ];
-        $validator = Validator::make($data,$rules);
-        if($validator->fails())
-        {
+        $validator = Validator::make($data, $rules);
+        if ($validator->fails()) {
             return redirect()->back()->with($validator->errors());
         }
 
@@ -113,28 +112,28 @@ class ClientController extends Controller
         if ($type == 'package') {
             $package = Package::find($id);
             if ($package) {
-                    $payment = Mollie::api()->payments->create([
-                        "amount" => [
-                            "currency" => "EUR",
-                            "value" => number_format($package->price, 2, '.', '')  // You must send the correct number of decimals, thus we enforce the use of strings
-                        ],
-                        "description" => "Purchase Package #" . $package->{'name_' . App::getLocale()},
-                        "redirectUrl" => route('purchaseDone', auth()->user()->id),
-                        "webhookUrl" => route('webhooks.mollie'),
-                        "metadata" => [
-                            "order_id" => $id . auth()->user()->id,
-                            "price" => $package->price,
-                            "expiration_duration_in_dayes" => $package->expiration_duration_in_dayes,
-                            "package_id" => $package->id,
-                            "offer_discount" => 0,
-                            "offer_id" => null,
-                            "user_id" => auth()->user()->id,
-                            "user_name" => auth()->user()->name,
-                            "lang" => App::getLocale(),
-                        ],
-                        "method" => $data['payment'],
-                    ]);
-                    return redirect($payment->getCheckoutUrl(), 303);
+                $payment = Mollie::api()->payments->create([
+                    "amount" => [
+                        "currency" => "EUR",
+                        "value" => number_format($package->price, 2, '.', '')  // You must send the correct number of decimals, thus we enforce the use of strings
+                    ],
+                    "description" => "Purchase Package #" . $package->{'name_' . App::getLocale()},
+                    "redirectUrl" => route('purchaseDone', auth()->user()->id),
+                    "webhookUrl" => route('webhooks.mollie'),
+                    "metadata" => [
+                        "order_id" => $id . auth()->user()->id,
+                        "price" => $package->price,
+                        "expiration_duration_in_dayes" => $package->expiration_duration_in_dayes,
+                        "package_id" => $package->id,
+                        "offer_discount" => 0,
+                        "offer_id" => null,
+                        "user_id" => auth()->user()->id,
+                        "user_name" => auth()->user()->name,
+                        "lang" => App::getLocale(),
+                    ],
+                    "method" => $data['payment'],
+                ]);
+                return redirect($payment->getCheckoutUrl(), 303);
             } else {
                 abort(404);
             }
@@ -144,32 +143,32 @@ class ClientController extends Controller
                 if (Carbon::now()->gt(date('Y-m-d H:i', strtotime($offer->end_date)))) {
                     return redirect()->back()->with("error1", trans('messages.This offer is expired you can subscrib available offers'));
                 }
-                    if (($offer->package->price - $offer->discount_amount) < 0) {
-                        return redirect()->back()->with("error1", trans('messages.This offer is expired you can subscrib available offers'));
-                    }
-                    // return number_format(($offer->package->price - $offer->discount_amount), 2, '.', '');
-                    $payment = Mollie::api()->payments->create([
-                        "amount" => [
-                            "currency" => "EUR",
-                            "value" => number_format(($offer->package->price - $offer->discount_amount), 2, '.', '')  // You must send the correct number of decimals, thus we enforce the use of strings
-                        ],
-                        "description" => "Purchase Package #" . $offer->package->{'name_' . App::getLocale()},
-                        "redirectUrl" => route('purchaseDone', auth()->user()->id),
-                        "webhookUrl" => route('webhooks.mollie'),
-                        "metadata" => [
-                            "order_id" => $id . auth()->user()->id,
-                            "price" => $offer->package->price,
-                            "expiration_duration_in_dayes" => $offer->package->expiration_duration_in_dayes,
-                            "package_id" => $offer->package->id,
-                            "offer_discount" => $offer->discount_amount,
-                            "offer_id" => $offer->id,
-                            "user_id" => auth()->user()->id,
-                            "user_name" => auth()->user()->name,
-                            "lang" => App::getLocale(),
-                        ],
-                        "method" => $data['payment'],
-                    ]);
-                    return redirect($payment->getCheckoutUrl(), 303);
+                if (($offer->package->price - $offer->discount_amount) < 0) {
+                    return redirect()->back()->with("error1", trans('messages.This offer is expired you can subscrib available offers'));
+                }
+                // return number_format(($offer->package->price - $offer->discount_amount), 2, '.', '');
+                $payment = Mollie::api()->payments->create([
+                    "amount" => [
+                        "currency" => "EUR",
+                        "value" => number_format(($offer->package->price - $offer->discount_amount), 2, '.', '')  // You must send the correct number of decimals, thus we enforce the use of strings
+                    ],
+                    "description" => "Purchase Package #" . $offer->package->{'name_' . App::getLocale()},
+                    "redirectUrl" => route('purchaseDone', auth()->user()->id),
+                    "webhookUrl" => route('webhooks.mollie'),
+                    "metadata" => [
+                        "order_id" => $id . auth()->user()->id,
+                        "price" => $offer->package->price,
+                        "expiration_duration_in_dayes" => $offer->package->expiration_duration_in_dayes,
+                        "package_id" => $offer->package->id,
+                        "offer_discount" => $offer->discount_amount,
+                        "offer_id" => $offer->id,
+                        "user_id" => auth()->user()->id,
+                        "user_name" => auth()->user()->name,
+                        "lang" => App::getLocale(),
+                    ],
+                    "method" => $data['payment'],
+                ]);
+                return redirect($payment->getCheckoutUrl(), 303);
 
             } else {
                 abort(404);
@@ -186,36 +185,29 @@ class ClientController extends Controller
         $email = $request->email;
         $payment_method = $request->payment;
         if ($package) {
-            if (Auth::check()) {
-                $if_subscribed = TheorySubscription::where(['user_id' => auth()->user()->id, 'theory_package_id' => $request->theory_package])->whereDate('expiration_date', '>', now())->first();
-                if ($if_subscribed) {
-                    return redirect()->route('viewTheoryPackage', $request->theory_package)->with("error", trans('messages.You already subscriped this package'));
-                }
-            }else{
-                $subscription = new TheorySubscription;
-                $subscription->theory_package_id =  $package->id;
-                $subscription->whatsapp = $whatsapp_num;
-                $subscription->name = $name;
-                $subscription->email = $email;
-                $subscription->price = $package->price;
-                $subscription->user_id = null;
-                $subscription->subscription_date = date('Y-m-d H:i');
-                $subscription->expiration_date = date('Y-m-d H:i', strtotime('+' . $package->expiration_duration_in_dayes . ' days'));
-                $subscription->pay_type = 'not_paid';
-                $subscription->is_paid = 0;
-                $subscription->massage = "processing";
-                $subscription->save();
-                $idSub = $subscription->id;
-            }
-            // add new Record with not paid
-            $user_id= Auth::check() ? auth()->user()->id : 0;
+            $subscription = new TheorySubscription;
+            $subscription->theory_package_id = $package->id;
+            $subscription->whatsapp = $whatsapp_num;
+            $subscription->name = $name;
+            $subscription->email = $email;
+            $subscription->price = $package->price;
+            $subscription->user_id = null;
+            $subscription->subscription_date = date('Y-m-d H:i');
+            $subscription->expiration_date = date('Y-m-d H:i', strtotime('+' . $package->expiration_duration_in_dayes . ' days'));
+            $subscription->pay_type = 'not_paid';
+            $subscription->is_paid = 0;
+            $subscription->massage = "processing";
+            $subscription->save();
+            $idSub = $subscription->id;
+
+            $user_id = Auth::check() ? auth()->user()->id : 0;
             $payment = Mollie::api()->payments->create([
                 "amount" => [
                     "currency" => "EUR",
                     "value" => number_format($package->price, 2, '.', '')  // You must send the correct number of decimals, thus we enforce the use of strings
                 ],
                 "description" => "Purchase Package #" . $package->{'name_' . App::getLocale()},
-                "redirectUrl" => route('purchaseTheoryDone', [Auth::check() ? auth()->user()->id : 0, $request->theory_package,isset($idSub)?$idSub:0]),
+                "redirectUrl" => route('purchaseTheoryDone', [Auth::check() ? auth()->user()->id : 0, $request->theory_package, isset($idSub) ? $idSub : 0]),
                 "webhookUrl" => route('webhooks.mollieTheory'),
                 "metadata" => [
                     "order_id" => $request->theory_package . $user_id,
@@ -225,7 +217,7 @@ class ClientController extends Controller
                     "whatsapp_num" => $whatsapp_num,
                     "name" => $name,
                     "email" => $email,
-                    "subid" => isset($idSub)?$idSub:0,
+                    "subid" => isset($idSub) ? $idSub : 0,
                     "user_id" => Auth::check() ? Auth::user()->id : 0,
                     "user_name" => $name,
                     "user_type" => Auth::check() ? 'user' : 'guest',
@@ -313,78 +305,34 @@ class ClientController extends Controller
         $paymentId = $request->input('id');
         $payment = Mollie::api()->payments->get($paymentId);
         if ($payment->metadata->user_type == "user") {
-        $updateUserFlash = User::find($payment->metadata->user_id);
-        if ($payment->isPaid()) {
-                $oldsubscribtion = TheorySubscription::where(['user_id' => $payment->metadata->user_id, 'theory_package_id' => $payment->metadata->theory_package_id])->first();
-                if (!empty($oldsubscribtion)) {
-                    $oldsubscribtion->price = $payment->metadata->price;
-                    $oldsubscribtion->whatsapp = $payment->metadata->whatsapp_num;
-                    $oldsubscribtion->subscription_date = date('Y-m-d H:i');
-                    $oldsubscribtion->expiration_date = date('Y-m-d H:i', strtotime('+' . $payment->metadata->expiration_duration_in_dayes . ' days'));
-                    $oldsubscribtion->pay_type = 'visa';
-                    $oldsubscribtion->renewed_times += 1;
-                    $oldsubscribtion->save();
-                    $data['user'] = $updateUserFlash;
-                    $data['packageName'] = $oldsubscribtion->package->{'name_' . $payment->metadata->lang};
-                    $data['subscribtion'] = $oldsubscribtion;
-                    $data['lang'] = $payment->metadata->lang;
-                    Mail::to($updateUserFlash->email)->send(new SubscriptionEmail($data));
-                    //   Mail::to('Adnaanaltaher@aatheorie.nl')->send(new SubscriptionEmail($data));
-                } else {
-                    $subscription = new TheorySubscription;
-                    $subscription->theory_package_id = $payment->metadata->theory_package_id;
-                    $subscription->whatsapp = $payment->metadata->whatsapp_num;
-                    $subscription->price = $payment->metadata->price;
-                    $subscription->user_id = $payment->metadata->user_id;
-                    $subscription->subscription_date = date('Y-m-d H:i');
-                    $subscription->expiration_date = date('Y-m-d H:i', strtotime('+' . $payment->metadata->expiration_duration_in_dayes . ' days'));
-                    $subscription->pay_type = 'visa';
-                    $subscription->save();
-                    $data['user'] = $updateUserFlash;
-                    $data['packageName'] = $subscription->package->{'name_' . $payment->metadata->lang};
-                    $data['subscribtion'] = $subscription;
-                    $data['lang'] = $payment->metadata->lang;
-                    Mail::to($updateUserFlash->email)->send(new SubscriptionEmail($data));
-                    //   Mail::to('Adnaanaltaher@aatheorie.nl')->send(new SubscriptionEmail($data));
-                }
-                $updateUserFlash->flash_message = trans('messages.Subscribed successfully');
-                $updateUserFlash->save();
-            } elseif ($payment->isCanceled()) {
-                $updateUserFlash->flash_message = trans('messages.Payment canceled');
-                $updateUserFlash->save();
-            } elseif ($payment->isExpired()) {
-                $updateUserFlash->flash_message = trans('messages.Payment expired');
-                $updateUserFlash->save();
-            } elseif ($payment->isFailed()) {
-                $updateUserFlash->flash_message = trans('messages.Payment Failed');
-                $updateUserFlash->save();
-            }
+            $updateUserFlash = User::find($payment->metadata->user_id);
         } else {
-            // not User Guest Have record in subscrib
-           $sub =  TheorySubscription::find($payment->metadata->subid);
-            if($payment->isPaid())
-            {
-
-                $data['user'] = ['name'=>$sub->name];
-                $data['packageName'] = $sub->package->{'name_' . $payment->metadata->lang};
-                $data['subscribtion'] = $sub;
-                $data['lang'] = $payment->metadata->lang;
-                Mail::to($sub->email)->send(new SubscriptionEmail($data));
-                $sub->massage  = trans('messages.Subscribed successfully');
-                $sub->pay_type ='visa';
-                $sub->is_paid =1;
-                $sub->save();
-            }elseif ($payment->isCanceled()) {
-                $sub->massage = trans('messages.Payment canceled');
-                $sub->save();
-            } elseif ($payment->isExpired()) {
-                $sub->massage  = trans('messages.Payment expired');
-                $sub->save();
-            } elseif ($payment->isFailed()) {
-                $sub->massage  = trans('messages.Payment Failed');
-                $sub->save();
-            }
+            $updateUserFlash = null;
         }
+        $sub = TheorySubscription::find($payment->metadata->subid);
+        if ($payment->isPaid()) {
+            $data['user'] = $updateUserFlash != null ? $updateUserFlash : ['name' => $sub->name];
+            $data['packageName'] = $sub->package->{'name_' . $payment->metadata->lang};
+            $data['subscribtion'] = $sub;
+            $data['lang'] = $payment->metadata->lang;
+            Mail::to($sub->email)->send(new SubscriptionEmail($data));
+            $sub->subscription_date = date('Y-m-d H:i');
+            $sub->expiration_date = date('Y-m-d H:i', strtotime('+' . $payment->metadata->expiration_duration_in_dayes . ' days'));
+            $sub->massage = trans('messages.Subscribed successfully');
+            $sub->pay_type = 'visa';
+            $sub->is_paid = 1;
+            $sub->save();
+        } elseif ($payment->isCanceled()) {
+            $sub->massage = trans('messages.Payment canceled');
+            $sub->save();
+        } elseif ($payment->isExpired()) {
+            $sub->massage = trans('messages.Payment expired');
+            $sub->save();
+        } elseif ($payment->isFailed()) {
+            $sub->massage = trans('messages.Payment Failed');
+            $sub->save();
+        }
+
     }
 
     public
@@ -398,20 +346,11 @@ class ClientController extends Controller
     }
 
     public
-    function purchaseTheoryDone($user_id, $package_id,$subid)
+    function purchaseTheoryDone($user_id, $package_id, $subid)
     {
-        if($user_id == 0)
-        {
-            $sub =  TheorySubscription::find($subid);
-            $flash_message = $sub->massage;
-        }else{
-            $updateUserFlash = User::find($user_id);
-            $flash_message = $updateUserFlash->flash_message;
-            $updateUserFlash->flash_message = null;
-            $updateUserFlash->save();
-        }
+        $sub = TheorySubscription::find($subid);
+        $flash_message = $sub->massage;
         return redirect()->route('viewTheoryPackage', $package_id)->with("success", $flash_message);
-
     }
 
     public
@@ -518,7 +457,7 @@ class ClientController extends Controller
                 ]);
                 return redirect($payment->getCheckoutUrl(), 303);
             }
-        } else{
+        } else {
             $offer = Offer::find($id);
             if ($offer) {
                 $payment = Mollie::api()->payments->create([

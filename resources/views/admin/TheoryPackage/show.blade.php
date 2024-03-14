@@ -63,8 +63,9 @@
                                     <td class="text-center">{{ $subscription->price }}</td>
                                     <td class="text-center">{{ $subscription->whatsapp }}</td>
                                     <td class="text-center">{{ $subscription->subscription_date }}</td>
-                                    <td class="text-center">{{ $subscription->pay_type }}</td>
                                     <td class="text-center">{{ $subscription->expiration_date }}</td>
+                                    <td class="text-center">{{ $subscription->pay_type }}</td>
+
                                     <td class="text-center">{{ $subscription->created_at }}</td>
                                     <td class="text-center">
                                         <form action="{{ route('theorySubscription.destroy', $subscription->id) }}"
