@@ -54,7 +54,7 @@
                                         <div class="col-md-12 col-12">
                                             <div class="theory-package-img-wrapper">
                                                 @if ($thpackage->{'cove_desktop_' . App::getLocale()})
-                                                    <img class="course-img-desktop" style="height: auto;  object-fit: contain;aspect-ratio: 16 / 9; width: 100%;"
+                                                    <img class="course-img-desktop" style="height: 170px;  object-fit: contain;aspect-ratio: 16 / 9; width: 100%;"
                                                          src="{{ asset($thpackage->{'cove_desktop_' . App::getLocale()}) }}"
                                                          alt="">
                                                 @endif

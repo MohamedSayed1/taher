@@ -1428,12 +1428,12 @@
     padding-bottom: 5%;
 }
 
-@media (max-width: 576px) {
+/* @media (max-width: 576px) {
     .static-page-wrapper {
         padding-top: 10%;
         padding-bottom: 10%;
     }
-}
+} */
 
 .static-page-wrapper .title-row .title {
     font-weight: bold;
@@ -2848,13 +2848,13 @@
 }
 
 .test-page-wrapper {
-    padding-top: 5%;
+    /* padding-top: 5%; */
     padding-bottom: 5%;
 }
 
 @media (max-width: 576px) {
     .test-page-wrapper {
-        padding-top: 10%;
+        /* padding-top: 10%; */
         padding-bottom: 10%;
     }
 }
