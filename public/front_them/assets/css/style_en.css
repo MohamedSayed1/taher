@@ -5910,10 +5910,6 @@ body {
     width: fit-content;
 }
 
-.mobile-top-row {
-    display:none;
-}
-
 @media (max-width:576px) {
     .test-page-wrapper .test-card-wrapper .btns-row .questions_number{
         display: inline-block;

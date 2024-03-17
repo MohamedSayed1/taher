@@ -42,8 +42,8 @@
         content:'';
         position: absolute;
         width:30px;
-        height:2px;
-        background:black;
+        height:4px;
+        background:#00000085;
         top:50%;
         left:50%;
         transform:translate(-50%, -50%) rotate(45deg)
