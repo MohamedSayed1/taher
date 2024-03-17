@@ -482,6 +482,8 @@ return [
     "payment" => "اختار طريقه الدفع",
     "arrangement_phone"=>"الترتيب للموبيل",
     "Arrangement"=>"الترتيب ",
+    "backExam"=>"العودةإلي قائمة الامتحانات",
+    "reloadExam"=>"إعادة الامتحان"
 
 
 

@@ -315,10 +315,13 @@
             </div>
         </div>
     </section>
+    @if(!empty($opinions))
     <section class="container-fluid reviews-row">
+
         <div class="row top-row">
             <h1 class="title">{{ trans('messages.Opinions of our learners') }}</h1>
         </div>
+
         <div class="row slider-row mt-1">
             <div class="swiper">
                 <!-- Additional required wrapper -->
@@ -350,6 +353,7 @@
             </div>
         </div>
     </section>
+    @endif
     <div class="modal fade subscrib-theory-modal" id="subscrib-theory-modal" tabindex="-1"
          aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
