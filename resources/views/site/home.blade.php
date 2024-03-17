@@ -87,7 +87,7 @@
             <div class="youtube-videos-title d-flex justify-content-center">
                 <h2>{{ trans('messages.Theory Packages') }}</h2>
             </div>
-            <div class="{{count($theory_packages) == 1?'one-slide' :'swiper' }} container mt-4" style="overflow:hidden">
+            <div class="{{count($theory_packages) <= 2 ? 'one-slide' :'more-slide' }} container mt-4 mb-5" style="overflow:hidden">
                 <div class="swiper-wrapper">
                     @forelse ($theory_packages as $thpackage)
                         <div class="swiper-slide theory-package-cards">
@@ -134,12 +134,12 @@
                                             <div class="col-md-12 col-12">
                                                 <div class="theory-package-img-wrapper">
                                                     @if ($thpackage->{'cove_desktop_' . App::getLocale()})
-                                                        <img class="course-img-desktop" style="height: 250px; box-shadow:0 0 6px 0 rgba(0, 0, 0, 0.16); border:1px solid rgba(0,0,0,.125); object-fit: contain;aspect-ratio: 16 / 9; width: 100%;"
+                                                        <img class="course-img-desktop" style="height: auto; box-shadow:0 0 6px 0 rgba(0, 0, 0, 0.16); border:1px solid rgba(0,0,0,.125); object-fit: contain;aspect-ratio: 1 / 1; width: 100%;"
                                                             src="{{ asset($thpackage->{'cove_desktop_' . App::getLocale()}) }}"
                                                             alt="">
                                                     @endif
                                                     @if ($thpackage->{'cove_phone_' . App::getLocale()})
-                                                        <img class="course-img-mobile d-none" style="height: 180px ;box-shadow:0 0 6px 0 rgba(0, 0, 0, 0.16); border:1px solid rgba(0,0,0,.125); object-fit: contain;aspect-ratio: 16 / 9; width: auto;"
+                                                        <img class="course-img-mobile d-none" style="height: auto ;box-shadow:0 0 6px 0 rgba(0, 0, 0, 0.16); border:1px solid rgba(0,0,0,.125); object-fit: contain;aspect-ratio: 1 / 1; width: auto;"
                                                             src="{{ asset($thpackage->{'cove_phone_' . App::getLocale()}) }}"
                                                             alt="">
 

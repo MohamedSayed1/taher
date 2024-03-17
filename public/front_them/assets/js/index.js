@@ -77,7 +77,7 @@ const swiper = new Swiper('.swiper', {
     },
 });
 
-const coursesSwiper = new Swiper('.one-slide', {
+const onlySwiper = new Swiper('.one-slide', {
     // Optional parameters
     direction: 'horizontal',
     loop: false,
@@ -94,7 +94,7 @@ const coursesSwiper = new Swiper('.one-slide', {
             spaceBetween: 0,
         },
         1024: {
-            slidesPerView: 3,
+            slidesPerView: 2,
             spaceBetween: 0,
         },
     },
@@ -103,6 +103,34 @@ const coursesSwiper = new Swiper('.one-slide', {
         el: '.swiper-pagination',
     },
 });
+
+const moreSwiper = new Swiper('.more-slide', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    clickable: true,
+    centeredSlides: true,
+    autoplay: false,
+    breakpoints: {
+        640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+        },
+        1024: {
+            slidesPerView: 2,
+            spaceBetween: 50,
+        },
+    },
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+    },
+});
+
 
 // Toggle Passwords Visibility
 
