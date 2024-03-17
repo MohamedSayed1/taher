@@ -462,10 +462,14 @@
                     </div>
                 </div>
             </div>
-            <div class="mobile-top-row" style="margin-bottom:80px">
-                <a class="btn test-btn" href="{{route('inExam.doReExam')}}">
+            <div class="mobile-top-row" style="margin-bottom:80px;flex-wrap: wrap;">
+                <a class="btn test-btn" href="{{route('inExam.doReExam')}}" style="width:245px; border-radius:10px; margin-bottom: 0.6rem">
                     <i class="fa-solid fa-rotate"></i>
-                    {{ Session::get('exam_object')['name_' . App::getLocale()] }}
+                    {{ __('messages.reloadExam') }}
+                </a>
+                <a class="btn test-btn hide-after-exam" href="{{route('start_package')}}" style="width:245px; border-radius:10px">
+                    <i class="fa-solid fa-rotate"></i>
+                    {{ __('messages.backExam') }}
                 </a>
         </div>
         </div>

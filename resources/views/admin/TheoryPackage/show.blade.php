@@ -51,7 +51,6 @@
                             </tr>
                         </thead>
                         <tbody>
-
                             @foreach ($theoryPackage->subscriptions as $key => $subscription)
                                 <tr>
                                     <td class="text-center">

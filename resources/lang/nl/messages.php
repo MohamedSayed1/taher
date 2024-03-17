@@ -480,8 +480,10 @@ return [
     "cove_phone_en" => "Afbeelding van Engelse mobiel",
     "cove_phone_nl" => "Afbeelding van Nederlands mobiel",
     "payment" => "Kies een betaalmethode",
-    "arrangement_phone"=>"Regeling voor de mobiele",
-    "Arrangement"=>"Regeling ",
+    "arrangement_phone" => "Regeling voor de mobiele",
+    "Arrangement" => "Regeling ",
+    "backExam" => "Terug naar Examenlijst",
+    "reloadExam" => "Examen herladen",
 
 
 ];
