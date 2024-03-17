@@ -41,7 +41,7 @@ $(function() {
     //This is triggered when the
     //user scrolls the page
     $(window).scroll(function() {
-        //Checking if each items to animate are 
+        //Checking if each items to animate are
         //visible in the viewport
         $("h2[data-max]").each(function() {
             inVisible($(this));
@@ -77,7 +77,7 @@ const swiper = new Swiper('.swiper', {
     },
 });
 
-const coursesSwiper = new Swiper('.courses-slider', {
+const coursesSwiper = new Swiper('.one-slide', {
     // Optional parameters
     direction: 'horizontal',
     loop: false,

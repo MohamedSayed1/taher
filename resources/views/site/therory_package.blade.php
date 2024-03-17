@@ -3,12 +3,12 @@
     {{ trans('messages.Adnan Eltaher') . ' | ' . $theoryPackage->{'name_' . App::getLocale()} }}
 @stop
 @section('content')
-    <style>
-        .ms-dd {
-            width:100%;
-            background: #fff;
-        }
-    </style>
+        <style>
+            .ms-dd {
+                width:100%;
+                background: #fff;
+            }
+        </style>
     <section class="container-fluid article-page-wrapper">
         <div class="container">
             <div class="row article-wrapper mt-3 mb-5 ">
