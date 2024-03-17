@@ -77,6 +77,33 @@ const swiper = new Swiper('.swiper', {
     },
 });
 
+const coursesSwiper = new Swiper('.courses-slider', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: false,
+    clickable: true,
+    centeredSlides: true,
+    autoplay: false,
+    breakpoints: {
+        640: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+        },
+        768: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+        },
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 0,
+        },
+    },
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+    },
+});
+
 // Toggle Passwords Visibility
 
 $(document).on('click', '#login-password-btn', function() {

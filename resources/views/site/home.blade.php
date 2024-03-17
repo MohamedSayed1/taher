@@ -3,13 +3,83 @@
     {{ trans('messages.Adnan Eltaher') . ' | ' . trans('messages.Home') }}
 @stop
 @section('content')
-    <section class="container-fluid theory-package-section mt-5">
+    <section class="container-fluid theory-package-section mt-5" style="overflow-x:hidden;">
         <div class="container" style="{{count($theory_packages) == 1?'padding-bottom: 3rem;':'' }} border:3px solid #c9c9c9; border-radius:20px">
             <br>
             <div class="youtube-videos-title d-flex justify-content-center">
                 <h2>{{ trans('messages.Theory Packages') }}</h2>
             </div>
-            <div class="row theory-package-cards mt-5 mb-5 justify-content-center">
+            <div class="courses-slider mt-4">
+                <div class="swiper-wrapper">
+                    @forelse ($theory_packages as $thpackage)
+                        <div class="swiper-slide theory-package-cards">
+                        @if($thpackage->type_view != 'photo')
+                            <div class="wrapper">
+                                <div class="theory-package-card card"
+                                    style="border: 1px solid {{$thpackage->color_border !=null?$thpackage->color_border:"transparent" }} ;background:{{$thpackage->color_background !=null?$thpackage->color_background:"transparent" }} ;">
+                                    <a style="text-decoration:none"
+                                    href="{{ route('viewTheoryPackage', $thpackage->id) }}">
+                                        <div class="row">
+                                            <div class="col-md-12 col-4">
+                                                <div class="theory-package-img-wrapper">
+                                                    @if ($thpackage->image)
+                                                        <img class="course-img-desktop" src="{{ asset($thpackage->image) }}"
+                                                            alt="">
+                                                    @endif
+                                                    @if ($thpackage->photo_phone)
+                                                        <img class="course-img-mobile d-none"
+                                                            src="{{ asset($thpackage->photo_phone) }}"
+                                                            alt="">
+
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-6">
+                                                <h5 class="title">{{ $thpackage->{'name_' . App::getLocale()} }}</h5>
+                                                <div class="content-wrapper">
+                                                    <p class="desc">
+                                                        {{ $thpackage->{'short_desc_' . App::getLocale()} }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                        @else
+                            <div class="wrapper">
+                                <div class="theory-package-card card" style="padding:0; border:none ">
+                                    <a style="text-decoration:none"
+                                    href="{{ route('viewTheoryPackage', $thpackage->id) }}">
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-12 col-12">
+                                                <div class="theory-package-img-wrapper">
+                                                    @if ($thpackage->{'cove_desktop_' . App::getLocale()})
+                                                        <img class="course-img-desktop" style="height: 250px; box-shadow:0 0 6px 0 rgba(0, 0, 0, 0.16); border:1px solid rgba(0,0,0,.125); object-fit: contain;aspect-ratio: 16 / 9; width: 100%;"
+                                                            src="{{ asset($thpackage->{'cove_desktop_' . App::getLocale()}) }}"
+                                                            alt="">
+                                                    @endif
+                                                    @if ($thpackage->{'cove_phone_' . App::getLocale()})
+                                                        <img class="course-img-mobile d-none" style="height: 180px ;box-shadow:0 0 6px 0 rgba(0, 0, 0, 0.16); border:1px solid rgba(0,0,0,.125); object-fit: contain;aspect-ratio: 16 / 9; width: auto;"
+                                                            src="{{ asset($thpackage->{'cove_phone_' . App::getLocale()}) }}"
+                                                            alt="">
+
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        @endif
+                        </div>
+                    
+                    @empty
+                    @endforelse
+                </div>
+            </div>
+            <!-- <div class="row theory-package-cards mt-5 mb-5 justify-content-center">
                 @forelse ($theory_packages as $thpackage)
                     @if($thpackage->type_view != 'photo')
                         <div class="col-lg-4 col-md-3 col-sm-12 wrapper">
@@ -74,7 +144,7 @@
 
                 @empty
                 @endforelse
-            </div>
+            </div> -->
         </div>
     </section>
     @if (sizeof($videos) > 0)

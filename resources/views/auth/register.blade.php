@@ -33,6 +33,21 @@
     .btn:hover{
         transform: scale(1.05)
     }
+
+    .before {
+        position: relative;
+    }
+
+    .before::before {
+        content:'';
+        position: absolute;
+        width:30px;
+        height:2px;
+        background:black;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%) rotate(45deg)
+    }
 </style>
 <body>
 <nav class="not-home">
@@ -95,11 +110,11 @@
                                         @if ($packed->offer)
                                             <sub
                                                 class="before">{{ $packed->price }}</sub>
-                                            <span>{{ $packed->price - $packed->offer->discount_amount }}</span>
+                                            <span class="after-discount">{{ $packed->price - $packed->offer->discount_amount }} €</span>
                                         @else
-                                            {{ $packed->price }}
+                                            {{ $packed->price }} €
                                         @endif
-                                          €
+                                          
                                     </span>
                                             <div>
                                                 <div class="package-select">

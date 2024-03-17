@@ -5495,7 +5495,7 @@ body {
 }
 
 .theory-package-section .theory-package-cards .wrapper .card .theory-package-img-wrapper {
-    height: 7em;
+    height: 100%;
     position: relative;
 }
 
@@ -6036,6 +6036,11 @@ body {
 .nav-bar-container .nav-btns .btn:first-of-type{
     margin-inline-end: 4px;
 }
+
+.singup-container .singup-form-wrapper .package-card .package-header {
+    flex-direction: row-reverse;
+}
+
 
 
 /*# sourceMappingURL=style_ar.css.map */

@@ -417,7 +417,7 @@ return [
     "You must login" => "You must login",
     "Insert whatsapp" => "Insert whatsapp",
     "Whatsapp Number" => "Whatsapp Number",
-    "Theory Packages" => "Packages",
+    "Theory Packages" => "Courses",
     "Confirm Whatsapp Number" => "Confirm Whatsapp Number",
     "You should login first to subscrib this package" => "You should login first to subscrib this package",
     "New Order => No" => "New Order => No",
