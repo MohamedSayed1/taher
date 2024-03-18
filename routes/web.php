@@ -165,6 +165,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::get('package/{package}/edit', 'edit')->middleware('can:package_edit')->name('package.edit');
         Route::post('package/cerateEditOffer', 'cerateEditOffer')->middleware('can:package_cerate_edit_offer')->name('package.cerateEditOffer');
         Route::post('package/getPackageOffers', 'getPackageOffers')->middleware('can:package_cerate_edit_offer')->name('package.getPackageOffers');
+        Route::get('package/del/offer/{id}', 'delOffer')->middleware('can:package_cerate_edit_offer')->name('package.delOffer');
         Route::post('package/getPackagePrice', 'getPackagePrice')->name('package.getPackagePrice');
         Route::post('package/change', 'changeActive')->name('package.changeActive');
     });

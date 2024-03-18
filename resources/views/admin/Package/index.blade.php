@@ -133,10 +133,18 @@
                                             </i>
                                         </a>
                                     @endcan
+                                    @can('package_cerate_edit_offer')
+                                            <a href="{{route('package.delOffer',$package->id)}}" onclick="return confirm('Are you sure?')"
+                                               title="{{ trans('messages.delete offer') }}"
+                                               class="waves-effect waves-light btn btn-primary-light btn-circle {{ $package->offer ? 'offer-active' : '' }} ">
+                                                <span class="icon-Trash1" style="color: red;"><span class="path1"></span><span
+                                                        class="path2"></span></span>
+                                            </a>
+                                    @endcan
                                     @can('package_edit')
                                         <a href="{{ route('package.edit', $package->id) }}"
-                                           class="waves-effect waves-light btn btn-primary-light btn-circle"><span
-                                                class="icon-Write"><span class="path1"></span><span
+                                           class="waves-effect waves-light btn btn-primary-light btn-circle">
+                                            <span class="icon-Write"><span class="path1"></span><span
                                                     class="path2"></span></span></a>
                                     @endcan
                                     @can('package_delete')
@@ -196,7 +204,7 @@
             $.post(`{{ route('package.changeActive') }}`, {
                 _token: '{{ csrf_token() }}',
                 id: el.value,
-            }, function(data) {
+            }, function (data) {
 
             });
         }

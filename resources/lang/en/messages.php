@@ -483,5 +483,7 @@ return [
     "Arrangement" => "Arrangement ",
     "backExam" => "Return to Exam List",
     "reloadExam" => "Reload Exam",
+    "delete offer"=>"delete offer",
+    "offer deleted successfully"=>"offer deleted successfully",
 
 ];

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2024 at 09:05 AM
+-- Generation Time: Mar 18, 2024 at 01:29 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -3416,6 +3416,7 @@ CREATE TABLE `packages` (
   `cove_phone_ar` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `cove_phone_nl` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `cove_phone_en` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `arrangement_phone` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -3424,13 +3425,14 @@ CREATE TABLE `packages` (
 -- Dumping data for table `packages`
 --
 
-INSERT INTO `packages` (`id`, `name_ar`, `name_nl`, `notes_ar`, `notes_nl`, `badge_ar`, `badge_nl`, `name_en`, `notes_en`, `badge_en`, `show_in_home`, `exam_count`, `price`, `expiration_duration_in_dayes`, `arrangement`, `photo_phone`, `photo_desktop`, `color_background`, `color_border`, `active`, `type_view`, `cove_desktop_ar`, `cove_desktop_en`, `cove_desktop_nl`, `cove_phone_ar`, `cove_phone_nl`, `cove_phone_en`, `created_at`, `updated_at`) VALUES
-(5, 'الباقة البرونزية', 'Brons pakket', '<p>عربي هولندي&nbsp;</p>\r\n\r\n<p>20 إمتحان</p>\r\n\r\n<p>20 محاولة</p>\r\n\r\n<p>المدة 30 يوم</p>', '<p>Nederlands Arabisch</p>\r\n\r\n<p>20 examens</p>\r\n\r\n<p>20 pogingen</p>\r\n\r\n<p>De termijn is 30 dagen</p>', 'الباقة البرونزية', 'الباقة البرونزية', NULL, NULL, 'الباقة البرونزية', 1, 39, 19.00, 30, 0, 'uploads/package/WV0pgI1709455692.jpg', 'uploads/package/ooVsyE1709455692.png', '#6b4747', '#0d0d0d', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-05 13:07:50', '2024-03-03 08:10:52'),
-(7, 'الباقة الفضية', 'Het zilveren pakket', '<p><span style=\"font-size:18px\">عربي هولندي</span></p>\r\n\r\n<p>25 إمتحان&nbsp;</p>\r\n\r\n<p>20 محاولة</p>\r\n\r\n<p>المدة 30 يوم</p>', '<p>Nederlands Arabisch</p>\r\n\r\n<p>25 examens</p>\r\n\r\n<p>20 pogingen</p>\r\n\r\n<p>De termijn is 30 dagen</p>', NULL, NULL, NULL, NULL, NULL, 1, 40, 25.00, 25, 6, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-03-07 22:41:08', '2024-01-01 06:54:25'),
-(8, 'الباقة الذهبية', 'Het gouden pakket', '<p>عربي هولندي</p>\r\n\r\n<p>32 إمتحان</p>\r\n\r\n<p>20 محاولة</p>\r\n\r\n<p>المدة 100 يوم</p>', '<p>Nederlands Arabisch</p>\r\n\r\n<p>32 examens</p>\r\n\r\n<p>20 pogingen</p>\r\n\r\n<p>De termijn is 100 dagen</p>', NULL, NULL, 'Golden Package', '<p>Golden Package</p>', 'Golden Package', 1, 49, 29.00, 62, 0, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-03-07 23:01:07', '2024-03-03 07:50:26'),
-(11, 'asdad', 'sadasdasf', '<p>dadasfsaf</p>', '<p>asdasdsa</p>', 'fassafs', 'safsfsfsf', 'asdsaf', '<p>qgqgqgqgqgqgqg</p>', 'sdasdasd', 1, 3, 100.00, 30, 0, '304bd7e3d356d56e62116907170d322dad.jpg', '174bd7e3d356d56e62116907170d322dad.png', '#d70f0f', '#a68282', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2024-02-14 12:55:30', '2024-03-03 07:49:21'),
-(12, 'يشسيشسي', 'asdasdsa', '<p>ضصبصضبصضبصضب</p>', NULL, 'شسيشسيشسي', 'سشبشسبشسب', 'شسبشسبشب', '<p>شسبضبصضبضصبضص</p>', 'شيشسيسشي', 0, 1, 200.00, 40, 1, '80bb27cbd41c47ea7795e1e32f0bc60837.jpg', '92bb27cbd41c47ea7795e1e32f0bc60837.png', '#8e1515', '#f9c8c8', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2024-02-14 13:00:45', '2024-03-05 10:38:46'),
-(13, 'سشيضبضب', 'سشيشسيشسب', '<p>شسيشسبضضلضلضلضلضل</p>', NULL, NULL, NULL, 'ضصللضل', NULL, 'شسيسشيشسبشب', 0, 4, 100.00, 60, 0, 'uploads/package/AFsQX81707986546.jpg', 'uploads/package/KE3oIP1707988161.jpeg', '#9d4848', '#c0a5a5', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2024-02-15 06:42:26', '2024-02-20 08:35:29');
+INSERT INTO `packages` (`id`, `name_ar`, `name_nl`, `notes_ar`, `notes_nl`, `badge_ar`, `badge_nl`, `name_en`, `notes_en`, `badge_en`, `show_in_home`, `exam_count`, `price`, `expiration_duration_in_dayes`, `arrangement`, `photo_phone`, `photo_desktop`, `color_background`, `color_border`, `active`, `type_view`, `cove_desktop_ar`, `cove_desktop_en`, `cove_desktop_nl`, `cove_phone_ar`, `cove_phone_nl`, `cove_phone_en`, `arrangement_phone`, `created_at`, `updated_at`) VALUES
+(5, 'الباقة البرونزية', 'Brons pakket', '<p>عربي هولندي&nbsp;</p>\r\n\r\n<p>20 إمتحان</p>\r\n\r\n<p>20 محاولة</p>\r\n\r\n<p>المدة 30 يوم</p>', '<p>Nederlands Arabisch</p>\r\n\r\n<p>20 examens</p>\r\n\r\n<p>20 pogingen</p>\r\n\r\n<p>De termijn is 30 dagen</p>', 'الباقة البرونزية', 'الباقة البرونزية', NULL, NULL, 'الباقة البرونزية', 1, 39, 19.00, 30, 1, 'uploads/package/WV0pgI1709455692.jpg', 'uploads/package/ooVsyE1709455692.png', '#6b4747', '#0d0d0d', 1, 'text', NULL, NULL, NULL, NULL, NULL, NULL, 3, '2023-01-05 13:07:50', '2024-03-14 07:53:40'),
+(7, 'الباقة الفضية', 'Het zilveren pakket', '<p><span style=\"font-size:18px\">عربي هولندي</span></p>\r\n\r\n<p>25 إمتحان&nbsp;</p>\r\n\r\n<p>20 محاولة</p>\r\n\r\n<p>المدة 30 يوم</p>', '<p>Nederlands Arabisch</p>\r\n\r\n<p>25 examens</p>\r\n\r\n<p>20 pogingen</p>\r\n\r\n<p>De termijn is 30 dagen</p>', NULL, NULL, NULL, NULL, NULL, 1, 42, 25.00, 25, 3, NULL, NULL, '#e4cdcd', '#d4c4c4', 1, 'text', NULL, NULL, NULL, NULL, NULL, NULL, 2, '2023-03-07 22:41:08', '2024-03-14 07:53:20'),
+(8, 'الباقة الذهبية', 'Het gouden pakket', '<p>عربي هولندي</p>\r\n\r\n<p>32 إمتحان</p>\r\n\r\n<p>20 محاولة</p>\r\n\r\n<p>المدة 100 يوم</p>', '<p>Nederlands Arabisch</p>\r\n\r\n<p>32 examens</p>\r\n\r\n<p>20 pogingen</p>\r\n\r\n<p>De termijn is 100 dagen</p>', NULL, NULL, 'Golden Package', '<p>Golden Package</p>', 'Golden Package', 1, 49, 29.00, 62, 0, NULL, NULL, '#f31212', '#fbd0d0', 1, 'text', NULL, NULL, NULL, NULL, NULL, NULL, 4, '2023-03-07 23:01:07', '2024-03-14 07:57:44'),
+(11, 'asdad', 'sadasdasf', '<p>dadasfsaf</p>', '<p>asdasdsa</p>', 'fassafs', 'safsfsfsf', 'asdsaf', '<p>qgqgqgqgqgqgqg</p>', 'sdasdasd', 1, 3, 100.00, 30, 0, '304bd7e3d356d56e62116907170d322dad.jpg', '174bd7e3d356d56e62116907170d322dad.png', '#d70f0f', '#a68282', 0, 'text', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2024-02-14 12:55:30', '2024-03-03 07:49:21'),
+(12, 'يشسيشسي', 'asdasdsa', '<p>ضصبصضبصضبصضب</p>', NULL, 'شسيشسيشسي', 'سشبشسبشسب', 'شسبشسبشب', '<p>شسبضبصضبضصبضص</p>', 'شيشسيسشي', 0, 1, 200.00, 40, 1, '80bb27cbd41c47ea7795e1e32f0bc60837.jpg', '92bb27cbd41c47ea7795e1e32f0bc60837.png', '#8e1515', '#f9c8c8', 0, 'text', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2024-02-14 13:00:45', '2024-03-05 10:38:46'),
+(13, 'سشيضبضب', 'سشيشسيشسب', '<p>شسيشسبضضلضلضلضلضل</p>', NULL, NULL, NULL, 'ضصللضل', NULL, 'شسيسشيشسبشب', 0, 4, 100.00, 60, 0, 'uploads/package/AFsQX81707986546.jpg', 'uploads/package/KE3oIP1707988161.jpeg', '#9d4848', '#c0a5a5', 0, 'text', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2024-02-15 06:42:26', '2024-02-20 08:35:29'),
+(14, 'sadadfqfqftest', 'tqwwqeqweqweq', '<p>qweqweqweqweqwe</p>', '<p>wqeqweqwewq</p>', 'ttwqeqwe', 'ewqeqweqweqwe', 'qweqweqwe', '<p>eqweqwrqwrqweqwe</p>', 'qweqweqweqweqw', 0, 3, 100.00, 45, 0, 'uploads/package/vPIVEo1710077980.jpeg', 'uploads/package/G2yJku1710077980.jpg', '#000000', '#000000', 0, 'photo', 'uploads/package/VJ5Mvi1710081789.jpg', 'uploads/package/53CCXB1710081789.png', 'uploads/package/RtcS2L1710081789.jpeg', 'uploads/package/A5tGPg1710081789.jpeg', 'uploads/package/mWQNgw1710077980.jpeg', 'uploads/package/vljeqE1710081789.jpg', NULL, '2024-03-10 11:39:40', '2024-03-10 12:43:09');
 
 -- --------------------------------------------------------
 
@@ -3588,7 +3590,10 @@ INSERT INTO `package_exams` (`id`, `exam_id`, `package_id`, `created_at`, `updat
 (212, 12, 13, NULL, NULL),
 (213, 17, 13, NULL, NULL),
 (214, 19, 13, NULL, NULL),
-(215, 67, 13, NULL, NULL);
+(215, 67, 13, NULL, NULL),
+(216, 13, 14, NULL, NULL),
+(217, 17, 14, NULL, NULL),
+(218, 19, 14, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -6281,6 +6286,7 @@ CREATE TABLE `theory_packages` (
   `cove_phone_ar` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `cove_phone_nl` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `cove_phone_en` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `arrangement_phone` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -6289,14 +6295,15 @@ CREATE TABLE `theory_packages` (
 -- Dumping data for table `theory_packages`
 --
 
-INSERT INTO `theory_packages` (`id`, `short_desc_ar`, `short_desc_nl`, `name_ar`, `name_nl`, `notes_ar`, `notes_nl`, `short_desc_en`, `name_en`, `notes_en`, `image`, `color_border`, `color_background`, `photo_phone`, `show_in_home`, `arrangement`, `price`, `expiration_duration_in_dayes`, `enable`, `type_view`, `cove_desktop_ar`, `cove_desktop_en`, `cove_desktop_nl`, `cove_phone_ar`, `cove_phone_nl`, `cove_phone_en`, `created_at`, `updated_at`) VALUES
-(1, 'وذج افتراضي يوضع في   التص', NULL, 'باقة التدريبات النظرية1', 'Lorem Ipsum', '<p>لوريم ايبسوم هو نموذج افتراضي يوضع في&nbsp; &nbsp;التصاميم لتعر<span style=\"color:#16a085\">ض على العميل&nbsp; لي</span>تصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه</p>\r\n\r\n<p>بلبلب</p>', '<p>s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but</p>', NULL, NULL, NULL, 'uploads/theoryPackage/Iit4351679833509.jpg', NULL, NULL, NULL, 1, 1, 200.00, 60, 1, 'text', NULL, NULL, NULL, NULL, NULL, NULL, '2023-03-26 10:25:09', '2024-02-20 08:20:39'),
-(2, NULL, NULL, 'باقة التدريبات النظرية2', 'Lorem Ipsum', 'لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه', 's simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but', NULL, NULL, NULL, 'uploads/theoryPackage/Iit4351679833509.jpg', NULL, NULL, NULL, 1, 2, 200.00, 60, 0, 'text', NULL, NULL, NULL, NULL, NULL, NULL, '2023-03-26 10:25:09', '2024-02-20 08:21:46'),
-(3, NULL, NULL, 'باقة التدريبات النظرية', 'Lorem Ipsum', 'لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه', NULL, NULL, NULL, NULL, 'uploads/theoryPackage/Iit4351679833509.jpg', NULL, NULL, NULL, 1, 6, 200.00, 60, 0, 'text', NULL, NULL, NULL, NULL, NULL, NULL, '2023-03-26 10:25:09', '2023-08-10 05:52:34'),
-(4, NULL, NULL, 'باقة التدريبات النظرية', NULL, 'لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه', NULL, NULL, NULL, NULL, 'uploads/theoryPackage/Iit4351679833509.jpg', NULL, NULL, NULL, 1, 4, 200.00, 60, 0, 'text', NULL, NULL, NULL, NULL, NULL, NULL, '2023-03-26 10:25:09', '2023-08-10 05:52:35'),
-(5, NULL, NULL, 'باقة التدريبات النظرية3', NULL, 'لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه', NULL, NULL, NULL, NULL, 'uploads/theoryPackage/Iit4351679833509.jpg', NULL, NULL, NULL, 1, 3, 200.00, 60, 1, 'text', NULL, NULL, NULL, NULL, NULL, NULL, '2023-03-26 10:25:09', '2023-08-10 05:54:04'),
-(6, NULL, NULL, 'باقة التدريبات النظرية', NULL, 'لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه', NULL, NULL, NULL, NULL, 'uploads/theoryPackage/Iit4351679833509.jpg', NULL, NULL, NULL, 1, 6, 200.00, 60, 1, 'text', NULL, NULL, NULL, NULL, NULL, NULL, '2023-03-26 10:25:09', '2023-08-09 06:58:13'),
-(8, 'test tsfdsgfa asd asfd', 'safasfasfasdasdasdaf', 'test tst tsest', 'asfasfasf', '<p>safasgdasgdsgdsf asf asf as</p>', '<p>sdasdasdsadsagafas</p>', 'agagasgasgasg', 'asasfasfasf', '<p>asdasdasdasda</p>', 'uploads/theorypackage/eKm3mR1708363009.png', '#e59e9e', '#b23434', 'uploads/theorypackage/SpaqCj1708363058.jpg', 1, 1, 100.00, 6, 1, 'text', NULL, NULL, NULL, NULL, NULL, NULL, '2024-02-19 15:02:03', '2024-02-20 08:35:39');
+INSERT INTO `theory_packages` (`id`, `short_desc_ar`, `short_desc_nl`, `name_ar`, `name_nl`, `notes_ar`, `notes_nl`, `short_desc_en`, `name_en`, `notes_en`, `image`, `color_border`, `color_background`, `photo_phone`, `show_in_home`, `arrangement`, `price`, `expiration_duration_in_dayes`, `enable`, `type_view`, `cove_desktop_ar`, `cove_desktop_en`, `cove_desktop_nl`, `cove_phone_ar`, `cove_phone_nl`, `cove_phone_en`, `arrangement_phone`, `created_at`, `updated_at`) VALUES
+(1, 'وذج افتراضي يوضع في   التص', NULL, 'باقة التدريبات النظرية1', 'Lorem Ipsum', '<p>لوريم ايبسوم هو نموذج افتراضي يوضع في&nbsp; &nbsp;التصاميم لتعر<span style=\"color:#16a085\">ض على العميل&nbsp; لي</span>تصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه</p>\r\n\r\n<p>بلبلب</p>', '<p>s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but</p>', NULL, NULL, NULL, 'uploads/theoryPackage/Iit4351679833509.jpg', '#000000', '#000000', NULL, 1, 1, 200.00, 60, 1, 'photo', 'uploads/theorypackage/rFKST21710330547.jpg', NULL, NULL, 'uploads/theorypackage/R6Ebd81710330547.jpg', NULL, NULL, NULL, '2023-03-26 10:25:09', '2024-03-17 10:36:07'),
+(2, NULL, NULL, 'باقة التدريبات النظرية2', 'Lorem Ipsum', 'لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه', 's simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but', NULL, NULL, NULL, 'uploads/theoryPackage/Iit4351679833509.jpg', NULL, NULL, NULL, 0, 2, 200.00, 60, 0, 'text', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-03-26 10:25:09', '2024-03-17 10:34:38'),
+(3, NULL, NULL, 'باقة التدريبات النظرية', 'Lorem Ipsum', 'لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه', NULL, NULL, NULL, NULL, 'uploads/theoryPackage/Iit4351679833509.jpg', NULL, NULL, NULL, 0, 6, 200.00, 60, 0, 'text', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-03-26 10:25:09', '2024-03-17 10:34:39'),
+(4, NULL, NULL, 'باقة التدريبات النظرية', NULL, 'لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه', NULL, NULL, NULL, NULL, 'uploads/theoryPackage/Iit4351679833509.jpg', NULL, NULL, NULL, 0, 4, 200.00, 60, 0, 'text', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-03-26 10:25:09', '2024-03-17 10:34:42'),
+(5, NULL, NULL, 'باقة التدريبات النظرية3', NULL, 'لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه', NULL, NULL, NULL, NULL, 'uploads/theoryPackage/Iit4351679833509.jpg', NULL, NULL, NULL, 0, 3, 200.00, 60, 0, 'text', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-03-26 10:25:09', '2024-03-17 10:34:40'),
+(6, NULL, NULL, 'باقة التدريبات النظرية', NULL, 'لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه', NULL, NULL, NULL, NULL, 'uploads/theoryPackage/Iit4351679833509.jpg', NULL, NULL, NULL, 0, 6, 200.00, 60, 0, 'text', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-03-26 10:25:09', '2024-03-17 10:34:41'),
+(8, 'test tsfdsgfa asd asfd', 'safasfasfasdasdasdaf', 'test tst tsest', 'asfasfasf', '<p>safasgdasgdsgdsf asf asf as</p>', '<p>sdasdasdsadsagafas</p>', 'agagasgasgasg', 'asasfasfasf', '<p>asdasdasdasda</p>', 'uploads/theorypackage/eKm3mR1708363009.png', '#e59e9e', '#b23434', 'uploads/theorypackage/SpaqCj1708363058.jpg', 0, 1, 100.00, 6, 1, 'text', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2024-02-19 15:02:03', '2024-03-17 10:34:19'),
+(9, 'asdasdasdsadasdf', NULL, 'safqfwqfwqf', 'asdasdasf', '<p>asdasasgqgwqgwqgwqg</p>', NULL, 'asfasdsadsasfsad', 'sadasfsafqfsf', '<p>sagasgsadsadsad</p>', NULL, '#000000', '#000000', NULL, 0, 0, 100.00, 40, 1, 'photo', 'uploads/theorypackage/widhgj1710082864.jpeg', 'uploads/theorypackage/PaE3fk1710082864.jpeg', 'uploads/theorypackage/8F1BF91710082864.jpeg', 'uploads/theorypackage/ugwjaV1710082864.png', 'uploads/theorypackage/i1WkTE1710082864.jpeg', 'uploads/theorypackage/OLrIcq1710082864.jpg', NULL, '2024-03-10 13:01:04', '2024-03-17 10:36:05');
 
 -- --------------------------------------------------------
 
@@ -6341,7 +6348,8 @@ INSERT INTO `theory_subscriptions` (`id`, `theory_package_id`, `user_id`, `subsc
 (13, 5, NULL, '2024-02-19 15:01:00', 200.00, '2024-04-19 15:01:00', '012364477', 'شيبضبض', 'asda@asda.com', 'not_paid', 0, 'processing', 0, '2024-02-19 13:01:08', '2024-02-19 13:01:08'),
 (14, 5, NULL, '2024-02-19 15:04:00', 200.00, '2024-04-19 15:04:00', '012364477', 'شيبضبض', 'asda@asda.com', 'not_paid', 0, 'processing', 0, '2024-02-19 13:04:05', '2024-02-19 13:04:05'),
 (15, 5, NULL, '2024-02-19 15:08:00', 200.00, '2024-04-19 15:08:00', '012364477', 'شيبضبض', 'asda@asda.com', 'not_paid', 0, 'processing', 0, '2024-02-19 13:08:09', '2024-02-19 13:08:09'),
-(16, 1, NULL, '2024-02-19 16:07:00', 200.00, '2024-04-19 16:07:00', '54448484', 'test', 'msayed0@outlook.com', 'not_paid', 0, 'processing', 0, '2024-02-19 14:07:44', '2024-02-19 14:07:44');
+(16, 1, NULL, '2024-02-19 16:07:00', 200.00, '2024-04-19 16:07:00', '54448484', 'test', 'msayed0@outlook.com', 'not_paid', 0, 'processing', 0, '2024-02-19 14:07:44', '2024-02-19 14:07:44'),
+(17, 1, NULL, '2024-03-17 12:49:00', 200.00, '2024-05-16 12:49:00', '213124124124', 'msayed0@outlook.com', 'msayed0@outlook.com', 'not_paid', 0, 'processing', 0, '2024-03-17 10:49:51', '2024-03-17 10:49:51');
 
 -- --------------------------------------------------------
 
@@ -6375,7 +6383,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `phone`, `gender`, `user_type`, `role_id`, `email`, `email_verified_at`, `password`, `remember_token`, `question_auto_move`, `enabel_sound`, `flash_message`, `created_at`, `updated_at`, `imported_user`, `imported_id`, `package_id`) VALUES
-(1, 'نادر جمال', '+201153430338', 'Male', 'Administrator', 1, 'admin@admin.com', '2022-12-04 07:12:59', '$2y$10$KCmYJ4kvP1t1KF87YIRYa.p6EJkhnm8KRVuXKrqSWE1ckFtnWoJOG', 'FQJnwoDZWbQdUOISMsYqU3WhknzgutsPVeAwsnx8ClonXgkVeZXCv2GIpK9G', 1, 1, 'messages.Payment expired', '2022-12-04 07:12:59', '2023-03-15 15:38:14', 0, NULL, NULL),
+(1, 'نادر جمال', '+201153430338', 'Male', 'Administrator', 1, 'admin@admin.com', '2022-12-04 07:12:59', '$2y$10$KCmYJ4kvP1t1KF87YIRYa.p6EJkhnm8KRVuXKrqSWE1ckFtnWoJOG', 'aaZiz9Rc6zYN77d9QlhSDl8iJiNQAfTMyRnsjT4sG8kE04xgqlz6mjcPzdFv', 1, 1, 'messages.Payment expired', '2022-12-04 07:12:59', '2023-03-15 15:38:14', 0, NULL, NULL),
 (3, 'أحمد نصر', NULL, 'Male', 'Client', NULL, 'ahmed@ahmed.com', '2022-12-15 10:30:24', '$2y$10$WTBIc4HrLUIN1gQl5ehxK.iWhce4/IK7bg4QlOWnwc9pZFzkVCI2y', NULL, 1, 1, NULL, '2022-12-15 08:29:38', '2022-12-15 08:29:38', 0, NULL, NULL),
 (7, 'Ahmed Nasr', NULL, 'Male', 'Client', NULL, 'ahmed.nasr.saieed@gmail.com', NULL, '$2y$10$UUPvio9MiI3xy2zSO8kYUe6r1EdA83m/p/koVTDc1u8Y22zxsH8u2', NULL, 1, 1, NULL, '2023-01-12 12:34:13', '2023-01-12 12:41:41', 0, NULL, NULL),
 (8, 'dscsdc', NULL, 'Male', 'Client', NULL, 'lx.srmady@gmail.com', NULL, '$2y$10$ohO5QUZSPdEeiqzDzhSST.zlh9C0fXez9biCORxz0SHTnV1pBHlqq', NULL, 1, 1, NULL, '2023-01-15 16:47:08', '2023-01-15 16:49:22', 0, NULL, NULL),
@@ -7232,7 +7240,8 @@ CREATE TABLE `youtube_videos_controllers` (
 --
 
 INSERT INTO `youtube_videos_controllers` (`id`, `title_ar`, `title_nl`, `title_en`, `description_ar`, `description_nl`, `description_en`, `video_type`, `video_link`, `video_link_id`, `enabel`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'asdasdas', 'asdasdasdsa', 'asdasdasd', 'asfasfsaf', 'asfasfsafsaf', 'safasgasgsagsag', 'youtube', 'https://www.youtube.com/watch?v=ETuMpDj3Eb8', 'ETuMpDj3Eb8', 0, 'uploads/youTubeVidios/fT1pMP1708251282.png', '2024-02-18 08:14:42', '2024-02-18 08:14:59');
+(1, 'asdasdas', 'asdasdasdsa', 'asdasdasd', 'asfasfsaf', 'asfasfsafsaf', 'safasgasgsagsag', 'youtube', 'https://www.youtube.com/watch?v=ETuMpDj3Eb8', 'ETuMpDj3Eb8', 1, 'uploads/youTubeVidios/fT1pMP1708251282.png', '2024-02-18 08:14:42', '2024-03-13 11:15:22'),
+(2, 'asdasdasd', 'asdasdasd', 'dsasdasdasdasd', 'asdasdasdsadsadsafasf', 'dasfasfasdasd', 'sadasfqfqwfqwf', 'youtube', 'https://www.youtube.com/watch?v=45l2VWqbXK4&t=5s', '45l2VWqbXK4', 1, 'uploads/youTubeVidios/cRrktu1710335718.jpg', '2024-03-13 11:15:18', '2024-03-13 11:15:18');
 
 --
 -- Indexes for dumped tables
@@ -7544,13 +7553,13 @@ ALTER TABLE `opinions`
 -- AUTO_INCREMENT for table `packages`
 --
 ALTER TABLE `packages`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `package_exams`
 --
 ALTER TABLE `package_exams`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=216;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=219;
 
 --
 -- AUTO_INCREMENT for table `pages`
@@ -7598,13 +7607,13 @@ ALTER TABLE `subscriptions`
 -- AUTO_INCREMENT for table `theory_packages`
 --
 ALTER TABLE `theory_packages`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `theory_subscriptions`
 --
 ALTER TABLE `theory_subscriptions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -7616,7 +7625,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `youtube_videos_controllers`
 --
 ALTER TABLE `youtube_videos_controllers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables

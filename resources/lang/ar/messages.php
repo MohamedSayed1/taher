@@ -483,7 +483,9 @@ return [
     "arrangement_phone"=>"الترتيب للموبيل",
     "Arrangement"=>"الترتيب ",
     "backExam"=>"العودةإلي قائمة الامتحانات",
-    "reloadExam"=>"إعادة الامتحان"
+    "reloadExam"=>"إعادة الامتحان",
+    "delete offer"=>"حذف عرض الباقة",
+    "offer deleted successfully"=>"تم حذف العرض بنجاح",
 
 
 

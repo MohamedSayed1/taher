@@ -484,6 +484,8 @@ return [
     "Arrangement" => "Regeling ",
     "backExam" => "Terug naar Examenlijst",
     "reloadExam" => "Examen herladen",
+    "delete offer"=>"delete offer",
+    "offer deleted successfully"=>"offer deleted successfully",
 
 
 ];

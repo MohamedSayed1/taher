@@ -10,6 +10,7 @@ use App\Http\Requests\UpdatePackageRequest;
 use App\Models\Exam;
 use App\Models\Offer;
 use App\Models\PackageExam;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
@@ -260,6 +261,21 @@ class PackageController extends Controller
             return $package->save();
         }
         return false;
+    }
+
+    public function delOffer($id)
+    {
+        $package = Package::with('offer')->find($id);
+        if($package->offer != null)
+        {
+            $offer = Offer::find($package->offer->id);
+            $offer->end_date =  Carbon::yesterday();
+            $offer->save();
+            session()->flash('notif', trans('messages.offer deleted successfully'));
+            return redirect()->route('package.index');
+        }
+
+        return redirect()->route('package.index');
     }
 
 }
