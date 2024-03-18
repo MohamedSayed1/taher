@@ -175,7 +175,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div class="col-lg-12" style="margin-bottom: 5px; background: #8950FC; color: #fff;padding: 5px;">في حاله اختيار طريقة العرض ( نص ) سوف يتم عرض هذه الصور </div>
+
+                        <div class="row" style="margin-bottom: 5px;border-bottom:1px #8950FC solid;border-right:1px #8950FC solid;">
                             <div class="form-group">
                                 <div class="col-lg-12 mx-auto">
                                     <div class="custom-file-container">
