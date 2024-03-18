@@ -139,7 +139,7 @@
                                                             alt="">
                                                     @endif
                                                     @if ($thpackage->{'cove_phone_' . App::getLocale()})
-                                                        <img class="course-img-mobile d-none" style="height: auto ;box-shadow:0 0 6px 0 rgba(0, 0, 0, 0.16); border:1px solid rgba(0,0,0,.125); object-fit: contain;aspect-ratio: 1 / 1; width: auto;"
+                                                        <img class="course-img-mobile d-none" style="height: 300px ;box-shadow:0 0 6px 0 rgba(0, 0, 0, 0.16); border:1px solid rgba(0,0,0,.125); object-fit: contain;aspect-ratio: 1 / 1; width: auto;"
                                                             src="{{ asset($thpackage->{'cove_phone_' . App::getLocale()}) }}"
                                                             alt="">
 
