@@ -21,9 +21,13 @@
         .btn:hover{
             transform: scale(1.05)
         }
-
-        .login-container form .btn {
-            height:78px;
+        .login-container form a.btn {
+            width: 100%;
+        }
+        @media (max-width:576px) {
+            .login-container form .btn {
+                height:78px;
+            }
         }
 </style>
 <body>
