@@ -4370,7 +4370,8 @@
     }
     footer {
         background-image: none !important;
-        background-color: #000 !important;
+        background-color: #E2F4FF !important;
+        color: #000 !important;
     }
 }
 
@@ -5272,7 +5273,7 @@ footer .info-wrapper .logo {
 
 footer .info-wrapper .desc {
     font-size: 1rem;
-    color: #fff;
+    color: #000;
     line-height: 1.7;
     text-align: start;
     width: 95%;
@@ -5311,7 +5312,7 @@ footer .links-wrapper a i {
 
 footer .links-wrapper a span {
     font-size: 1rem;
-    color: #fff;
+    color: #000;
 }
 
 footer .links-wrapper a:hover i {
@@ -5333,14 +5334,14 @@ footer .contact-info-wrapper .info-item {
 }
 
 footer .contact-info-wrapper .info-item i {
-    color: #fff;
+    color: #000;
 }
 
 footer .contact-info-wrapper .info-item a,
 footer .contact-info-wrapper .info-item span {
     text-decoration: none;
     margin-inline-start: 10px;
-    color: #fff;
+    color: #000;
 }
 
 @media (max-width: 576px) {
@@ -5369,7 +5370,7 @@ footer .copyrights-row .social-links {
 
 footer .copyrights-row .social-links a {
     text-decoration: none;
-    color: #fff;
+    color: #000;
     margin-inline-end: 1.5em;
 }
 
@@ -5829,18 +5830,27 @@ body {
 }
 
 .mobile-top-row {
-    display:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.mobile-top-row .test-btn:first-of-type {
+    margin-inline-end:10px;
 }
 
 @media (max-width: 576px) {
     .test-page-wrapper .top-row {
         display: none;
     }
-    .mobile-top-row {
+    .mobile-top-row .test-btn:first-of-type {
+        margin-inline-end:0;
+    }
+    /* .mobile-top-row {
         display:flex;
         align-items:center;
         justify-content:center;
-    }
+    } */
 }
 
 .mobile-top-row .test-btn {
@@ -5870,7 +5880,11 @@ body {
 }
 
 .test-page-wrapper .test-card-wrapper .btns-row .questions_number{
-    display: none;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 900;
+    color: grey;
+    width: auto;
 }
 
 @media (max-width:576px) {
@@ -6009,21 +6023,21 @@ body {
 }
 
 @media (max-width:1230px) {
-    .register-gate  .login-txt, .register-txt{
+    .register-gate  .login-txt,.register-gate .register-txt{
         min-height:95px;
         max-height:95px;
     }
 }
 
 @media (max-width:576px) {
-    .register-gate  .login-txt, .register-txt{
+    .register-gate  .login-txt,.register-gate .register-txt{
         min-height:110px;
         max-height:110px;
     }
 }
 
 @media (max-width:430px) {
-    .register-gate  .login-txt, .register-txt{
+    .register-gate  .login-txt,.register-gate .register-txt{
         min-height:145px;
         max-height:145px;
     }

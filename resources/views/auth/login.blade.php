@@ -21,6 +21,10 @@
         .btn:hover{
             transform: scale(1.05)
         }
+
+        .login-container form .btn {
+            height:78px;
+        }
 </style>
 <body>
     <section class="container-fluid login-container">
@@ -78,18 +82,19 @@
                                 @endif
                             </div>
                         </div>
-                        <button class="btn btn-danger w-100 mt-4"style=" font-weight:700; font-size:20px" type="submit">{{ trans('messages.Login') }}</button>
+                        <button class="btn btn-danger w-100 mt-4 mb-2"style=" font-weight:700; font-size:20px" type="submit">{{ trans('messages.Login') }}</button>
+                        <a class="btn bg-primary text-white" href="{{route('register')}}"
+                             style="background-color:#71ff5d40; border:1px solid #00b81e; border-radius:5px; padding:0.5rem 0; font-weight:700;; font-size:20px">
+                                {{ trans('messages.RegisterLink') }}
+                        </a>
                     </form>
                 </div>
-                <div class="row redirection-row mt-3" style="font-weight:900;padding: 0em 0.5em 1em 2.5em;">
-                    <!-- <span style="font-size:1.2rem">{{ trans('messages.Dont have an account?') }}</span>
-                    <a href="{{ route('register') }}">{{ trans('messages.Create new account') }}</a> -->
-
+                <!-- <div class="row redirection-row mt-3" style="font-weight:900;padding: 0em 0.5em 1em 2.5em;">
                     <a class="register-txt d-inline-block w-100 btn bg-primary text-white" href="{{route('register')}}"
                              style="background-color:#71ff5d40; border:1px solid #00b81e; border-radius:5px; padding:0.5rem 0; font-weight:700;; font-size:20px">
                                 {{ trans('messages.RegisterLink') }}
                         </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

@@ -9,13 +9,13 @@
                 <div class="row gx-2 mb-4 align-items-stretch px-3">
                     <div class="col-6">
                         <a class="login-txt d-inline-block w-100 btn bg-danger text-white" href="{{route('login')}}"
-                             style="background-color:#1ba9ff40; border:1px solid #1ba9ff; border-radius:10px; padding:1rem; font-weight:700; font-size:20px">
+                             style="background-color:#1ba9ff40; border-radius:10px; padding:1rem; font-weight:700; font-size:20px">
                              {{ trans('messages.LoginLink') }}
                         </a>
                     </div>
                     <div class="col-6">
                         <a class="register-txt d-inline-block w-100 btn bg-primary text-white" href="{{route('register')}}"
-                             style="background-color:#71ff5d40; border:1px solid #00b81e; border-radius:10px; padding:1rem; font-weight:700; font-size:20px">
+                             style="background-color:#71ff5d40; border-radius:10px; padding:1rem; font-weight:700; font-size:20px">
                                 {{ trans('messages.RegisterLink') }}
                         </a>
                     </div>

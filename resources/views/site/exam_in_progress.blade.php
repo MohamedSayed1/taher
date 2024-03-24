@@ -467,7 +467,7 @@
                     <i class="fa-solid fa-rotate"></i>
                     {{ __('messages.reloadExam') }}
                 </a>
-                <a class="btn test-btn hide-after-exam" href="{{route('start_package')}}" style="width:245px; border-radius:10px">
+                <a class="btn test-btn hide-after-exam" href="{{route('start_package')}}" style="width:245px; border-radius:10px; margin-bottom: 0.6rem">
                     <i class="fa-solid fa-rotate"></i>
                     {{ __('messages.backExam') }}
                 </a>
