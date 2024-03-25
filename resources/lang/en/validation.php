@@ -144,8 +144,9 @@ return [
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
-
-            "email.unique" => "The value of the email field is already in use. Please click on the red button (Login) below.",
+        ],
+        'email' => [
+            'unique' => 'The value of the email field is already in use. Please click on the red button (Login) below.',
         ],
     ],
 

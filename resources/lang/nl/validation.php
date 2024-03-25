@@ -144,9 +144,13 @@ return [
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
-
-            "email.unique" => "De waarde van het e-mailveld is al in gebruik. Klik alstublieft op de rode knop (Inloggen) hieronder.",
         ],
+        'email' => [
+            'unique' => 'De waarde van het e-mailveld is al in gebruik. Klik alstublieft op de rode knop (Inloggen) hieronder.',
+
+        ],
+
+
     ],
 
     /*
