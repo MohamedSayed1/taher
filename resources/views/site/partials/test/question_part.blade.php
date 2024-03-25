@@ -410,6 +410,8 @@
         spotsPositionSet();
         applyDragDrop();
 
+        $('#question_counter').html("{{  Session::get('exam_object')->num_q .'/'. Session::get('exam_object')->questions_num}}");
+
     })
     var drake = null,
         $holdAnswers = [];
