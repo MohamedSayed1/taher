@@ -5254,7 +5254,8 @@
 footer {
     padding-top: 3% !important;
     padding-bottom: 3% !important;
-    background-image: url("../../assets/imgs/footer-bg.png");
+    /* background-image: url("../../assets/imgs/footer-bg.png"); */
+    background-color: #E2F4FF;
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -5880,11 +5881,7 @@ body {
 }
 
 .test-page-wrapper .test-card-wrapper .btns-row .questions_number{
-    display: inline-block;
-    font-size: 24px;
-    font-weight: 900;
-    color: grey;
-    width: auto;
+    display: none;
 }
 
 @media (max-width:576px) {
@@ -5900,18 +5897,20 @@ body {
 }
 
 .mobile-top-row {
-    display:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 @media (max-width: 576px) {
     .test-page-wrapper .top-row {
         display: none;
     }
-    .mobile-top-row {
+    /* .mobile-top-row {
         display:flex;
         align-items:center;
         justify-content:center;
-    }
+    } */
 }
 
 .mobile-top-row .test-btn {

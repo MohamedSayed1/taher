@@ -3762,11 +3762,7 @@
 }
 
 .test-page-wrapper .test-card-wrapper .btns-row .questions_number{
-    display: inline-block;
-    font-size: 24px;
-    font-weight: 900;
-    color: grey;
-    width: auto;
+    display: none;
 }
 
 @media (max-width: 1024px) {

@@ -173,12 +173,12 @@
                          aria-valuemin="0" aria-valuemax="100">{{ $examProgressPersentage }}%
                     </div>
                 </div>
-                <div class="btns" id="redo-exam-btn">
+                <!-- <div class="btns" id="redo-exam-btn">
                     <a class="btn repeat" href="{{ route('inExam.doReExam') }}">
                         <i class="fa-solid fa-rotate"></i>
                         <span>{{ trans('messages.Re-examination') }}</span>
                     </a>
-                </div>
+                </div> -->
             </div>
 {{--            <div class="mobile-top-row">--}}
 {{--                <a class="btn test-btn" href="{{route('inExam.doReExam')}}">--}}
@@ -264,6 +264,9 @@
                                     <span class="control"></span>
                                 </label>
                             </div> --}}
+                        </div>
+                        <div class="question-counter" style="width:fit-content">
+                            <span class="counter" id="question_counter" style="font-size: 35px;color:white; font-weight:900">{{Session::get('exam_object')->num_q .'/'.Session::get('exam_object')->questions_num}}</span>
                         </div>
                         <div class="info-btns" id="current-exam-analysis-data">
                             <button class="btn hide-after-exam" onclick="getCurrentResult()">
@@ -463,11 +466,11 @@
                 </div>
             </div>
             <div class="mobile-top-row" style="margin-bottom:80px;flex-wrap: wrap;">
-                <a class="btn test-btn" href="{{route('inExam.doReExam')}}" style="width:245px; border-radius:10px; margin-bottom: 0.6rem">
+                <a class="btn test-btn" href="{{route('inExam.doReExam')}}" style="width:255px; border-radius:10px; margin-bottom: 0.6rem">
                     <i class="fa-solid fa-rotate"></i>
                     {{ __('messages.reloadExam') }}
                 </a>
-                <a class="btn test-btn hide-after-exam" href="{{route('start_package')}}" style="width:245px; border-radius:10px; margin-bottom: 0.6rem">
+                <a class="btn test-btn hide-after-exam" href="{{route('start_package')}}" style="width:255px; border-radius:10px; margin-bottom: 0.6rem">
                     <i class="fa-solid fa-rotate"></i>
                     {{ __('messages.backExam') }}
                 </a>
