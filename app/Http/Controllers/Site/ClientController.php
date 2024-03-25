@@ -259,7 +259,7 @@ class ClientController extends Controller
                 $data['subscribtion'] = $oldsubscribtion;
                 $data['lang'] = $payment->metadata->lang;
                 Mail::to($updateUserFlash->email)->send(new SubscriptionEmail($data));
-                // Mail::to('Adnaanaltaher@aatheorie.nl')->send(new SubscriptionEmail($data));
+                Mail::to('Adnaanaltaher@aatheorie.nl')->send(new SubscriptionEmail($data));
             } else {
                 $subscription = new Subscription;
                 $subscription->package_id = $payment->metadata->package_id;
@@ -276,6 +276,7 @@ class ClientController extends Controller
                 $data['subscribtion'] = $subscription;
                 $data['lang'] = $payment->metadata->lang;
                 Mail::to($updateUserFlash->email)->send(new SubscriptionEmail($data));
+                Mail::to('Adnaanaltaher@aatheorie.nl')->send(new SubscriptionEmail($data));
 
                 //  Mail::to('Adnaanaltaher@aatheorie.nl')->send(new SubscriptionEmail($data));
             }
@@ -315,13 +316,14 @@ class ClientController extends Controller
             $data['packageName'] = $sub->package->{'name_' . $payment->metadata->lang};
             $data['subscribtion'] = $sub;
             $data['lang'] = $payment->metadata->lang;
-            Mail::to($sub->email)->send(new SubscriptionEmail($data));
             $sub->subscription_date = date('Y-m-d H:i');
             $sub->expiration_date = date('Y-m-d H:i', strtotime('+' . $payment->metadata->expiration_duration_in_dayes . ' days'));
             $sub->massage = trans('messages.Subscribed successfully');
             $sub->pay_type = 'visa';
             $sub->is_paid = 1;
             $sub->save();
+            Mail::to($sub->email)->send(new SubscriptionEmail($data));
+            Mail::to('mohameddeveloper0@gmail.com')->send(new SubscriptionEmail($data));
         } elseif ($payment->isCanceled()) {
             $sub->massage = trans('messages.Payment canceled');
             $sub->save();

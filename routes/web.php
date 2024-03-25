@@ -23,6 +23,9 @@ use App\Http\Controllers\Admin\TheoryPackageController;
 use App\Http\Controllers\Admin\TheorySubscriptionController;
 use App\Http\Controllers\Admin\YoutubeVideosControllerController;
 use App\Mail\RegisterEmail;
+use App\Mail\SubscriptionEmail;
+use App\Models\Setting;
+use App\Models\TheorySubscription;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -41,8 +44,27 @@ use Mollie\Laravel\Facades\Mollie;
 */
 
 Route::get('test', function () {
-    session()->flash('notif', trans('messages.Category deleted successfully'));
-    return redirect()->route('home');
+    $setting = Setting::find(1);
+    $data['first_phone'] = $setting->main_phone;
+    $data['secound_phone'] = $setting->secoundry_phone;
+    $data['email'] = $setting->email;
+    $data['address_ar'] = $setting->address_ar;
+    $data['address_nl'] = $setting->address_nl;
+    $data['lang'] = 'ar';
+    $data['user']=['name'=>'test'];
+
+
+    $sub = TheorySubscription::orderBy('created_at', 'desc')->first();
+    $data['packageName'] = $sub->package->{'name_' .  $data['lang']};
+    $data['subscribtion'] = $sub;
+        Mail::to($sub->email)->send(new SubscriptionEmail($data));
+        Mail::to('mohameddeveloper0@gmail.com')->send(new SubscriptionEmail($data));
+    if (Mail::failures()) {
+        dd('hhh');
+    }else{
+        dd('send');
+    }
+
 });
 Route::post('/language', [App\Http\Controllers\HomeController::class, 'changeLanguage'])->name('language.change');
 Route::get('/importNewUsers', [App\Http\Controllers\Admin\BlogController::class, 'importNewUsers'])->name('importNewUsers');

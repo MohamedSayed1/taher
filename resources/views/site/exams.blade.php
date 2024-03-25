@@ -36,7 +36,7 @@
         .form-check-input, .form-check-input + label {
             cursor: pointer;
         }
-        
+
         .btn, .lang-btn, .test-long-wrapper{
             transition:0.4s all ease;
         }
@@ -158,8 +158,8 @@
                         }
                     @endphp
 
-                    <div class="col-lg-4 col-md-6 col-sm-12 test-card">
-                        <label for="exam-1" class="test-long-wrapper  {{ $lock_exam == true ? 'lock_exam' : '' }}" style="background-color: #e7f6ff; border:1px solid #6bbafd">
+                    <div class="col-lg-4 col-md-6 col-sm-12 test-card" onclick="gotExam('{{ $lock_exam == true ? route('packages', $exam->id) : route('examInfo', $exam->id) }}')">
+                        <label for="exam-1" class="test-long-wrapper  {{ $lock_exam == true ? 'lock_exam' : '' }}" style="background-color: #e7f6ff; border:1px solid #6bbafd;">
                             <a href="{{ $lock_exam == true ? route('packages', $exam->id) : route('examInfo', $exam->id) }}"
                                 class="info" style="text-decoration: none">
                                 {{-- <img src="{{ url('front_them/assets/imgs/test-icon-1.png') }}" alt=""> --}}
@@ -190,7 +190,7 @@
                                 <input type="radio" name="exam-1" id="exam-1" {{in_array($exam->id,$done)?"checked":""}}  >
                             @else
                                 <input type="radio" name="exam-1" id="exam-1">
-                                @endif
+                            @endif
                         </label>
                     </div>
 
@@ -471,6 +471,11 @@
 
 @section('script')
     <script type="text/javascript">
+        function gotExam(url)
+        {
+            window.location.href = url;
+        }
+
         // $('.lock_exam').click(function() {
         //     return false;
         // });
@@ -500,6 +505,7 @@
                     $('#test-history-modal').modal('show');
                 });
         }
+
     </script>
 
 @endsection
