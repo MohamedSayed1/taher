@@ -159,7 +159,7 @@
                     @endphp
 
                     <div class="col-lg-4 col-md-6 col-sm-12 test-card" onclick="gotExam('{{ $lock_exam == true ? route('packages', $exam->id) : route('examInfo', $exam->id) }}')">
-                        <label for="exam-1" class="test-long-wrapper  {{ $lock_exam == true ? 'lock_exam' : '' }}" style="background-color: #e7f6ff; border:1px solid #6bbafd;">
+                                <label for="{{$exam->id}}" class="test-long-wrapper  {{ $lock_exam == true ? 'lock_exam' : '' }}" style="background-color: #e7f6ff; border:1px solid #6bbafd;">
                             <a href="{{ $lock_exam == true ? route('packages', $exam->id) : route('examInfo', $exam->id) }}"
                                 class="info" style="text-decoration: none">
                                 {{-- <img src="{{ url('front_them/assets/imgs/test-icon-1.png') }}" alt=""> --}}
@@ -186,11 +186,11 @@
                                     <img src="{{ url('front_them/assets/imgs/info-icon.png') }}" alt="">
                                 </div> -->
                             </div>
-                            @if(Auth()->check())
-                                <input type="radio" name="exam-1" id="exam-1" {{in_array($exam->id,$done)?"checked":""}}  >
+                            <!-- @if(Auth()->check())
+                                <input type="radio" name="exam-1" id="{{$exam->id}}" {{in_array($exam->id,$done)?"checked":""}}  >
                             @else
-                                <input type="radio" name="exam-1" id="exam-1">
-                            @endif
+                                <input type="radio" name="exam-1" id="{{$exam->id}}">
+                            @endif -->
                         </label>
                     </div>
 

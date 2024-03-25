@@ -465,7 +465,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mobile-top-row" style="margin-bottom:80px;flex-wrap: wrap;">
+            <div class="mobile-top-row" style="margin-block:80px;flex-wrap: wrap;">
                 <a class="btn test-btn" href="{{route('inExam.doReExam')}}" style="width:255px; border-radius:10px; margin-bottom: 0.6rem">
                     <i class="fa-solid fa-rotate"></i>
                     {{ __('messages.reloadExam') }}
@@ -474,7 +474,7 @@
                     <i class="fa-solid fa-rotate"></i>
                     {{ __('messages.backExam') }}
                 </a>
-        </div>
+            </div>
         </div>
     </section>
     <!-- Report Modal -->
